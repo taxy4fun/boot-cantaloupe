@@ -9,6 +9,7 @@ script:
 notifications:
   email:
     recipients:
-    - manuelf.mola@gmail.com
+      - manuelf.mola@gmail.com
+      - cmarting@gmail.com
     on_success: change
     on_failure: always
