@@ -5,3 +5,10 @@ jdk:
 
 script:
   - gradle build
+
+notifications:
+  email:
+    recipients:
+    - manuelf.mola@gmail.com
+    on_success: change
+    on_failure: always
