@@ -12,7 +12,6 @@ NOTE: testing and tasting the Boot fruit
 
 . Java SE Development Kit 8
 
-.installation
  wget --no-check-certificate --no-cookies \
    --header "Cookie: oraclelicense=accept-securebackup-cookie" \
    --progress=dot:giga \
@@ -21,25 +20,26 @@ NOTE: testing and tasting the Boot fruit
  sudo ln -sf /usr/local/share/jdk1.8.0_131/bin/java /usr/local/bin/java
  java -version
 
+
 . Gradle 3.5
 
-.installation
  wget --progress=dot:giga \
    https://services.gradle.org/distributions/gradle-3.5-all.zip
  sudo unzip gradle-3.5-all.zip -d /usr/local/share/
  sudo ln -sf /usr/local/share/gradle-3.5/bin/gradle /usr/local/bin/gradle
  gradle -version
-
-.wrapper
  gradle wrapper --gradle-version 3.5
+
 
 . Maven 3.5.0
 
-.installation
  wget --progress=dot:giga \
    http://www-us.apache.org/dist/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
  sudo tar xvf apache-maven-3.5.0-bin.tar.gz -C /usr/local/share/
  sudo ln -sf /usr/local/share/apache-maven-3.5.0/bin/mvn /usr/local/bin/mvn
  mvn -v
 
+
 . Ascii Art Generator
+
+ http://patorjk.com/software/taag/
