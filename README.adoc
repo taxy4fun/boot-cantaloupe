@@ -6,6 +6,13 @@ Madrid
 :source-highlighter: coderay
 :experimental:
 
+[link=https://travis-ci.org/butcherless/boot-cantaloupe]
+image:https://travis-ci.org/butcherless/boot-cantaloupe.svg?branch=master[] -> master
+
+[link=https://travis-ci.org/butcherless/boot-cantaloupe]
+image:https://travis-ci.org/butcherless/boot-cantaloupe.svg?branch=pruebas-manu[] -> pruebas-manu
+
+
 NOTE: testing and tasting the Boot fruit
 
 == JDK & friends download and installation
