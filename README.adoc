@@ -20,6 +20,7 @@ NOTE: testing and tasting the Boot fruit
  sudo ln -sf /usr/local/share/jdk1.8.0_131/bin/java /usr/local/bin/java
  java -version
 
+
 . Gradle 3.5
 
  wget --progress=dot:giga \
@@ -27,6 +28,8 @@ NOTE: testing and tasting the Boot fruit
  sudo unzip gradle-3.5-all.zip -d /usr/local/share/
  sudo ln -sf /usr/local/share/gradle-3.5/bin/gradle /usr/local/bin/gradle
  gradle -version
+ gradle wrapper --gradle-version 3.5
+
 
 . Maven 3.5.0
 
@@ -35,3 +38,93 @@ NOTE: testing and tasting the Boot fruit
  sudo tar xvf apache-maven-3.5.0-bin.tar.gz -C /usr/local/share/
  sudo ln -sf /usr/local/share/apache-maven-3.5.0/bin/mvn /usr/local/bin/mvn
  mvn -v
+
+
+. Ascii Art Generator
+
+ http://patorjk.com/software/taag/
+
+== Proyecto básico
+
+
+<1> Crear una carpeta con el nombre del proyecto y acceder.
+<2> Crear el fichero `build.gradle` con las configuraciones necesarias
+<3> Crear los directorios del proyecto.
+<4> Crear la clase principal `App.java`.
+
+[source, bash]
+.Terminal.app
+----
+$ mkdir myproject && cd myproject <1>
+
+$ touch build.gradle <2>
+
+$ mkdir -p src/{main,test}/{java,resources} src/main/java/com/myproject <3>
+
+$ touch src/main/java/com/myproject/App.java <4>
+----
+
+[source, java]
+.build.gradle
+----
+plugins {
+    id 'org.springframework.boot' version '1.5.3.RELEASE'
+    id 'java'
+}
+
+jar {
+    baseName = 'myproject'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+----
+
+[source, java]
+.App.java
+----
+package com.myproject;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class App implements CommandLineRunner {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
+
+    @Override
+    public void run(String... args) throws Exception {
+        LOGGER.info("Hola Mundo!");
+    }
+
+    public static void main (String[] args) {
+        SpringApplication.run(App.class, args);
+    }
+}
+----
+
+<1> Lista las tareas disponibles para gradle.
+<2> Ejecuta la aplicación boot.
+
+[source, bash]
+.Terminal.app
+----
+$ gradle tasks <1>
+
+$ gradle boRu <2>
+
+YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.myproject.App : Hola Mundo!
+YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.myproject.App : Started App in 10.975 seconds (JVM running for 11.303)
+----
+
