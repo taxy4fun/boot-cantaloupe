@@ -1,0 +1,39 @@
+= project requirements
+Madrid
+:icons: font
+:toc: left
+:sectnums:
+:source-highlighter: coderay
+:experimental:
+
+NOTE: Bajo el amparo de las iniciativas _Stop Smoke Sellers_, _Research gives you the Kempston_, _Don't warm up yourself_, _F5 Task is not enough_, _Save the yoghurts_ y con fines didácticos se quiere desarrollar un documento de requisitos que describe una sencilla funcionalidad empresarial.
+
+== Resumen
+Se quiere construir un Sistema de Información que permita la explotación de un Servicio de Taxi. Una vez registrados en el sistema los dos perfiles básicos, _Driver_ y _Customer_, un customer solicitará un _Journey_ a un _Driver_ para ir desde un _Point_ origen a otro destino. El _Journey_ tiene lugar a través de una _Route_ que visitará una collección de _Point_. Una vez concluido el _Journey_ se emitirá un _Receipt_ con el detalle del servicio. Tanto _Driver_ como _Customer_ disponen de varios _Profile_ que permiten personalizar la oferta y la demanda del servicio. 
+
+Por ejemplo, un cliente desea realizar un trayecto desde su domicilio al aeropuerto por la ruta más rápida disponible en el instante que solicita el servicio.
+
+Otro ejemplo, un cliente desear realizar una carrera desde un parque en el que se encuentra con su mascota a su domicilio. Solicita el servicio a aquellos conductores que puedan ofrecerle el servicio.
+
+== Entities
+
+=== Driver (TODO)
+TODO
+
+=== Customer (TODO)
+TODO
+
+=== Profile  (TODO)
+TODO
+
+=== Journey (TODO)
+Representa el trayecto o viaje solicitado por el cliente.
+
+=== Point (TODO)
+Punto de coordenadas terrestre formado por longitude y latitude por el que discurre el viaje o trayecto.
+
+=== Route (TODO)
+Collección de puntos que recorre el taxi para prestar el servicio.
+
+=== Receipt (TODO)
+Factura correspondiente al servicio prestado.
