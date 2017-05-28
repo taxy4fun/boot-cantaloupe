@@ -6,11 +6,9 @@ Madrid
 :source-highlighter: coderay
 :experimental:
 
-[link=https://travis-ci.org/butcherless/boot-cantaloupe]
-image:https://travis-ci.org/butcherless/boot-cantaloupe.svg?branch=master[] -> master
+image:https://travis-ci.org/butcherless/boot-cantaloupe.svg?branch=master[] -> link:https://travis-ci.org/butcherless/boot-cantaloupe[master]
 
-[link=https://travis-ci.org/butcherless/boot-cantaloupe]
-image:https://travis-ci.org/butcherless/boot-cantaloupe.svg?branch=pruebas-manu[] -> pruebas-manu
+image:https://travis-ci.org/butcherless/boot-cantaloupe.svg?branch=pruebas-manu[] -> link:https://travis-ci.org/butcherless/boot-cantaloupe[pruebas-manu]
 
 
 NOTE: testing and tasting the Boot fruit
@@ -134,4 +132,3 @@ $ gradle boRu <2>
 YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.myproject.App : Hola Mundo!
 YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.myproject.App : Started App in 10.975 seconds (JVM running for 11.303)
 ----
-
