@@ -79,3 +79,20 @@ Factura correspondiente al servicio prestado.
 
 == Business rules (TODO)
 En este apartado se definen las reglas de negocio que incluyen las validaciones, reglas simples y reglas compuestas por otras reglas...
+
+
+== Use Cases
+
+=== Solicitar un trayecto
+
+=== Iniciar un trayecto
+
+=== Finalizar un trayecto
+
+=== Cancelar un trayecto
+
+=== Puntuar a un Conductor
+
+=== Mostrar la lista de trayectos
+
+=== Enviar la factura de un trayecto
