@@ -80,16 +80,24 @@ Factura correspondiente al servicio prestado.
 == Business rules (TODO)
 En este apartado se definen las reglas de negocio que incluyen las validaciones, reglas simples y reglas compuestas por otras reglas...
 
+. Definir la política de asignación de un trayecto a un conductor
+. Definir la política de cancelación de un trayecto para un conductor. Definir la política de penalización.
+. Definir la política de cancelación de un trayecto para un cliente
+. Definir la política de puntos para un conductor. Definir la política de penalización para puntuación igual a cero.
+. Definir la política para el cálculo de la tarifa de un trayecto
+
 
 == Use Cases
 
-=== Solicitar un trayecto
+=== Solicitar un trayecto por un cliente
 
-=== Iniciar un trayecto
+=== Iniciar un trayecto por un conductor
 
-=== Finalizar un trayecto
+=== Finalizar un trayecto por un conductor
 
-=== Cancelar un trayecto
+=== Cancelar un trayecto por un conductor
+
+=== Cancelar un trayecto por un cliente
 
 === Puntuar a un Conductor
 
