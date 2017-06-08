@@ -1,0 +1,86 @@
+= Roadmap tecnico
+Madrid
+:icons: font
+:toc: left
+:sectnums:
+:source-highlighter: coderay
+:experimental:
+
+NOTE: - Asentar en primer lugar conocimiento tecnico más básico y transversal, antes de entrar en cuestiones más avanzadas / especificas
+	  - El roadmap se encuentra organizado de mayor a menor prioridad
+
+
+
+== Para revisar en la siguiente sesión
+- Configuration classes
+- Externalized Configuration: Terminar de repasar properties y yml 
+- Precedencia de sobrescritura de los valores de las properties
+- Logging
+- Spring Boot Gradle plugin
+- Travis (CI en cloud)
+- Heroku (despliegue en cloud)
+- Nexus en cloud
+- Repaso de comandos Git de uso común
+
+== Cuestiones para sucesivas sesiones
+- Capa Controler con REST
+- Contenedores de servlerts embenidos Tomcat / Jetty / Undertown
+- Uso de Spring Profiles
+- Developer tools
+- Spring Boot CLI
+- Capa Service
+- Patron Builder / DTOs / Mapstruct
+- Lombok
+- Capa Repository con Spring Data JPA (modo relaccional)
+- Capa Repository con Spring Data Neo4j / MongoDB (modo NO-SQL)
+- Testing en Spring Boot
+- Cobertura de código
+- Módulos por capas con Maven / Gradle
+- Spring IO Platform
+- Autoconfiguración en Spring Boot
+- Spring Security
+- JWT
+- Actuator
+
+== Temas más avanzados / específicos con Spring Boot
+- Spring REST Docs
+- REST con HATEOAS
+- GraphQL
+- Querydsl / jOOQ / JinQ
+- Distributed Transactions with JTA
+- Messaging (JMS, AMQP, Kafaka)
+- Spring Batch / Integration
+- Testing con spock
+- Caching (diferentes proveedores: EhCache, Hazelcast, Infinispan...)
+- WebSockets
+- Monitoring and management over JMX
+- Spring Session
+
+== Cuestiones para revisar en el largo plazo
+- Spring 5
+- Junit 5
+- Reactive web development with Netty and Spring WebFlux
+- Spring Boot 2.0
+- Jhipster en modo monolito
+- Teoría de Microservicios
+- Spring Cloud Netflix (Eureka, Hystrix, Zuul, Archaiu...)
+- Jhipster con microservicios
+
+== Otras cuestiones transversales al margen de Spring Boot
+- GitFlow
+- Jenkins 2
+- IntelliJ
+- Unix
+- Java 8
+- Java 9
+- Groovy / Grails
+- Docker
+- ElasticSearch
+- Calidad de código con Sonar
+- JavaScript: Promesas, Observables y Async Await
+- TypeScript
+- Angular
+- Apache Cordova
+- Ionic
+
+
