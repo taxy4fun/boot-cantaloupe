@@ -67,7 +67,7 @@ Representa el trayecto o viaje solicitado por el cliente.
 Punto de coordenadas terrestre formado por longitude y latitude por el que discurre el viaje o trayecto.
 
 === Route (TODO)
-Collección de puntos que recorre el taxi para prestar el servicio.
+Colección de puntos que recorre el taxi para prestar el servicio.
 
 === PaymentMethod (TODO)
 Medio de pago por el que los usuarios del sistema abonan los conceptos del servicio.
@@ -85,22 +85,47 @@ En este apartado se definen las reglas de negocio que incluyen las validaciones,
 . Definir la política de cancelación de un trayecto para un cliente
 . Definir la política de puntos para un conductor. Definir la política de penalización para puntuación igual a cero.
 . Definir la política para el cálculo de la tarifa de un trayecto
-
+. Definir la política para mostrar un vehículo disponible
 
 == Use Cases
 
+=== Registro conductor en la aplicación
+
+=== Registro cliente en la aplicación
+TODO
+
+=== Login de usuario
+. El usuario (conductor/cliente) debe estar previamente registrado
+
 === Solicitar un trayecto por un cliente
+. El cliente se loga en la aplicación
+. Se obtiene la posición actual del cliente
+. Se solicita el destino
+. Se muestra propuesta de vehículos disponibles
+. El cliente elige el vehículo para viajar
+. El cliente recibe notificación de solicitud aceptada
+
+=== Esperando a ser recogido
+. El cliente ha recibido una notificación de solicitud aceptada previamente
+. El cliente podrá visualizar durante ese tiempo de espera la posición actual del vehículo elegido
 
 === Iniciar un trayecto por un conductor
 
+
 === Finalizar un trayecto por un conductor
+
 
 === Cancelar un trayecto por un conductor
 
+
 === Cancelar un trayecto por un cliente
+. El cliente podrá cancelar el viaje por coste de cero euros si el conductor no ha iniciado su carrera
+. En el caso de que el conductor haya iniciado su carrera se le cobrará un recargo de 5 euros
 
 === Puntuar a un Conductor
 
 === Mostrar la lista de trayectos
 
 === Enviar la factura de un trayecto
+. Si se ha cancelado por parte del cliente se emite factura de X euros
+. Si se ha concluído el trayecto satisfactoriamente se emite factura del precio aplicado al perfil del cliente y dependiendo del perfil del vehículo elegido
