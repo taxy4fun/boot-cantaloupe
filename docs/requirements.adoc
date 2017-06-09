@@ -108,6 +108,12 @@ En este apartado se definen las reglas de negocio que incluyen las validaciones,
 . El cliente ha recibido una notificación de solicitud aceptada previamente
 . El cliente podrá visualizar durante ese tiempo de espera la posición actual del vehículo elegido
 
+=== Activar disponibilidad por un conductor
+. El conductor se muestra como disponible marcándolo desde la aplicación y los clientes lo visualizarán como opción posible
+
+=== Desactivar disponibilidad por un conductor
+. El conductor se marca como no disponible desde la aplicación y los clientes no lo visualizarán como opción
+
 === Iniciar un trayecto por un conductor
 . El conductor recibe una notificación de solicitud de carrera
 . El conductor acepta la solicitud y comienza la espera por parte el cliente
@@ -118,17 +124,19 @@ En este apartado se definen las reglas de negocio que incluyen las validaciones,
 . La aplicación emite la factura correspondiente
 
 === Cancelar un trayecto por un conductor
-
+. El conductor no puede atender la petición una vez ha sido ya aceptada previamente y por tanto la cancela
 
 === Cancelar un trayecto por un cliente
 . El cliente podrá cancelar el viaje por coste de cero euros si el conductor no ha iniciado su carrera
 . En el caso de que el conductor haya iniciado su carrera se le cobrará un recargo de 5 euros
 
-=== Puntuar a un Conductor
-
+=== Puntuar a un Conductor (TODO)
 
 === Mostrar la lista de trayectos
 . El cliente podrá en cualquier momento visualizar un historial de trayectos que haya realizado con anterioridad
+
+=== Calcular la factura final de un trayecto
+. El cálculo de la factura será el número de Km's multiplicado por la tarifa que aplique al perfil del cliente y del vehículo elegido
 
 === Enviar la factura de un trayecto
 . Si se ha cancelado por parte del cliente se emite factura de X euros
