@@ -15,10 +15,10 @@ Por ejemplo, un cliente desea realizar un trayecto desde su domicilio al aeropue
 
 Otro ejemplo, un cliente desear realizar una carrera desde un parque en el que se encuentra con su mascota a su domicilio. Solicita el servicio a aquellos conductores que puedan ofrecerle el servicio.
 
-== Entities (TODO)
+== Entities
 En este apartado se definien las entidades de negocio y sus atributos...
 
-=== User (TODO)
+=== User
 Usuario del servicio. En la primera versión podrán ser: Conductor y Cliente.
 
 [cols="1,3"options="header"]
@@ -78,7 +78,7 @@ Conductor de un vehículo que transporta a un cliente desde un lugar a otro.
 |conduce 1 coche
 |===
 
-=== Customer (TODO)
+=== Customer
 Persona que contrata un trayecto de taxi. El cliente que contrata el trayecto puede ser distinto a la persona transportada.
 
 [cols="1,3"options="header"]
@@ -246,14 +246,6 @@ Colección de puntos que recorre el taxi para prestar el servicio.
 |forman parte de 1 ruta
 |===
 
-=== PaymentMethod (TODO)
-Medio de pago por el que los usuarios del sistema abonan los conceptos del servicio.
-
-==== CreditCard
-
-=== Receipt (TODO)
-Factura correspondiente al servicio prestado.
-
 == Business rules (TODO)
 En este apartado se definen las reglas de negocio que incluyen las validaciones, reglas simples y reglas compuestas por otras reglas...
 
@@ -320,3 +312,11 @@ En este apartado se definen las reglas de negocio que incluyen las validaciones,
 . Si se ha cancelado por parte del cliente se emite factura de X euros
 . Si se ha concluído el trayecto satisfactoriamente se emite factura del cliente dependiendo del vehículo elegido
 . *Si se ha concluído el trayecto satisfactoriamente se emite factura del precio aplicado al perfil del cliente y dependiendo del perfil del vehículo elegido (TODO)*
+
+=== PaymentMethod (TODO)
+Medio de pago por el que los usuarios del sistema abonan los conceptos del servicio.
+
+==== CreditCard
+
+=== Receipt (TODO)
+Factura correspondiente al servicio prestado.
