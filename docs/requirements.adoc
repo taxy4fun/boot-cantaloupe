@@ -89,10 +89,9 @@ En este apartado se definen las reglas de negocio que incluyen las validaciones,
 
 == Use Cases
 
-=== Registro conductor en la aplicación
+=== Registro conductor en la aplicación (TODO)
 
-=== Registro cliente en la aplicación
-TODO
+=== Registro cliente en la aplicación (TODO)
 
 === Login de usuario
 . El usuario (conductor/cliente) debe estar previamente registrado
@@ -110,10 +109,13 @@ TODO
 . El cliente podrá visualizar durante ese tiempo de espera la posición actual del vehículo elegido
 
 === Iniciar un trayecto por un conductor
-
+. El conductor recibe una notificación de solicitud de carrera
+. El conductor acepta la solicitud y comienza la espera por parte el cliente
 
 === Finalizar un trayecto por un conductor
-
+. El conductor llega al destino solicitado por el cliente
+. El conductor notifica a través de la aplicación que ha llegado a destino
+. La aplicación emite la factura correspondiente
 
 === Cancelar un trayecto por un conductor
 
@@ -124,7 +126,9 @@ TODO
 
 === Puntuar a un Conductor
 
+
 === Mostrar la lista de trayectos
+. El cliente podrá en cualquier momento visualizar un historial de trayectos que haya realizado con anterioridad
 
 === Enviar la factura de un trayecto
 . Si se ha cancelado por parte del cliente se emite factura de X euros
