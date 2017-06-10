@@ -244,6 +244,9 @@ Point ubicado en el tiempo. Una colección de footprints forma una ruta.
 |Relationship
 |Description
 
+|point
+|Está asociada a 1 punto geográfico de la trayectoria
+
 |route
 |forman parte de 1 ruta
 |===
