@@ -256,6 +256,12 @@ En este apartado se definen las reglas de negocio que incluyen las validaciones,
 . Definir la política para el cálculo de la tarifa de un trayecto
 . Definir la política para mostrar un vehículo disponible
 
+=== FareService
+Define las políticas necesarias para cancelar el trayecto y emitir la factura.
+
+=== LocatorService
+Define las políticas necesarias para localizar los vehículos.
+
 == Use Cases
 
 === Registro conductor en la aplicación (TODO)
@@ -302,15 +308,17 @@ En este apartado se definen las reglas de negocio que incluyen las validaciones,
 === Puntuar a un Conductor (TODO)
 
 === Mostrar la lista de trayectos
-. El cliente podrá en cualquier momento visualizar un historial de trayectos que haya realizado con anterioridad
+. El cliente podrá en cualquier momento visualizar un historial de trayectos que haya realizado con anterioridad.
+
+Se permite un fitro sencillo con rango de fechas.
 
 === Calcular la factura final de un trayecto
 . El cálculo de la factura será el número de Km's multiplicado por la tarifa que aplique dependiendo del vehículo elegido
 . *El cálculo de la factura será el número de Km's multiplicado por la tarifa que aplique al perfil del cliente y dependiendo del perfil del vehículo elegido (TODO)*
 
 === Enviar la factura de un trayecto
-. Si se ha cancelado por parte del cliente se emite factura de X euros
-. Si se ha concluído el trayecto satisfactoriamente se emite factura del cliente dependiendo del vehículo elegido
+. Si se ha cancelado por parte del cliente se emite factura de X euros.
+. Si se ha concluído el trayecto satisfactoriamente se emite factura la del cliente dependiendo del vehículo elegido
 . *Si se ha concluído el trayecto satisfactoriamente se emite factura del precio aplicado al perfil del cliente y dependiendo del perfil del vehículo elegido (TODO)*
 
 === PaymentMethod (TODO)
