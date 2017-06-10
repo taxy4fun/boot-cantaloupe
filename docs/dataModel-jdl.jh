@@ -1,0 +1,66 @@
+entity Vehicle {
+	plate String required minlength(3),
+    brand String required minlength(3),
+	description String required minlength(3),
+}
+
+entity User {
+	username String required minlength(3),
+    password String required minlength(6),
+    registerDate LocalDate required,
+    retry Integer required
+}
+
+entity Person {
+	name String required minlength(3),
+    surname String required minlength(3),
+	email String required minlength(3),
+    phone String required minlength(3),
+    address String required minlength(3),
+    postalCode Integer required minlength(5),
+    city String required minlength(3)
+}
+
+entity Driver {
+	available Boolean required
+}
+
+entity Customer {
+
+}
+
+entity Journey {
+	alias String,
+    requestAccepted Boolean
+}
+
+entity Point {
+	latitude Long required,
+    longitude Long required
+}
+
+entity Route {
+
+}
+
+entity Footprint {
+	datetime LocalDate required
+}
+
+relationship OneToMany {
+	Customer{journey} to Journey,
+    Vehicle{route} to Route,
+    Route{point} to Footprint
+}
+
+relationship OneToOne {
+    User{person} to Person,
+    Driver{user} to User,
+    Customer{user} to User,
+    Driver{vehicle} to Vehicle,
+    Vehicle{driver} to Driver,
+    Journey{origin} to Point,
+    Journey{destiny} to Point,
+    Footprint{point} to Point,
+    Journey{requested} to Vehicle
+}
