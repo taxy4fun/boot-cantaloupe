@@ -220,7 +220,7 @@ Colección de puntos que recorre el taxi para prestar el servicio.
 |Relationship
 |Description
 
-|fingerprint
+|footprint
 |está formada por n huellas
 |===
 
