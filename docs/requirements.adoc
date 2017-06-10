@@ -168,12 +168,17 @@ Representa el trayecto o viaje solicitado por el cliente.
 |Description
 |alias
 |Identificador del trayecto
+|requestAccepted
+|Indicador de solicitud aceptada por el Driver
 |===
 
 [cols="1,3"options="header"]
 |===
 |Relationship
 |Description
+
+|request
+|Driver solicitado
 
 |origin
 |Punto de partida del trayecto
