@@ -3,15 +3,18 @@ plugins {
     id 'java'
 }
 
+repositories {
+    mavenCentral()
+}
 
 jar {
-    baseName = 'myproject'
-    version =  '0.0.1-SNAPSHOT'
+    baseName = 'hello-world'
+    version = '0.0.1-SNAPSHOT'
 }
 
-repositories {
-    jcenter()
-}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter")
