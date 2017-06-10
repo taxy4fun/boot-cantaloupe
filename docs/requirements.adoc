@@ -97,7 +97,7 @@ Persona que contrata un trayecto de taxi. El cliente que contrata el trayecto pu
 |===
 
 === Profile  (TODO)
-TODO
+[red]#TODO:# Serviría por ejemplo para filtrar la colección de vehículos que se muestran a un cliente cuando solicita un trayecto.
 
 === Person
 Persona Física que representa a un usuario del sistema.
@@ -224,7 +224,9 @@ Colección de puntos que recorre el taxi para prestar el servicio.
 |está formada por n huellas
 |===
 
-=== FingerPrint
+=== Footprint o track
+Point ubicado en el tiempo. Una colección de footprints forma una ruta.
+
 [cols="1,3"options="header"]
 |===
 |Property
@@ -257,10 +259,18 @@ En este apartado se definen las reglas de negocio que incluyen las validaciones,
 . Definir la política para mostrar un vehículo disponible
 
 === FareService
-Define las políticas necesarias para cancelar el trayecto y emitir la factura.
+Define la lógica necesaria para cancelar el trayecto y emitir la factura.
 
 === LocatorService
-Define las políticas necesarias para localizar los vehículos.
+Define la lógica necesaria para localizar los vehículos.
+
+=== RankingService
+Define la lógica necesaria para la valoración y bonificiación de conductores y usuarios.
+
+Por ejemplo, un conductor rebibe puntos/bonificación por haber devuelto la documentación a un cliente que notificó a Atención al Cliente haberla olvidado en el vehículo.
+
+
+=== PaymentService
 
 == Use Cases
 
@@ -272,7 +282,7 @@ Define las políticas necesarias para localizar los vehículos.
 . El usuario (conductor/cliente) debe estar previamente registrado
 
 === Solicitar un trayecto por un cliente
-. El cliente se loga en la aplicación
+. El cliente se autentica en la aplicación
 . Se obtiene la posición actual del cliente
 . Se solicita el destino
 . Se muestra propuesta de vehículos disponibles
@@ -284,7 +294,7 @@ Define las políticas necesarias para localizar los vehículos.
 . El cliente podrá visualizar durante ese tiempo de espera la posición actual del vehículo elegido
 
 === Activar disponibilidad por un conductor
-. El conductor se muestra como disponible marcándolo desde la aplicación y los clientes lo visualizarán como opción posible
+. El conductor se muestra como disponible marcándolo desde la aplicación y los clientes lo visualizarán como opción posible.
 
 === Desactivar disponibilidad por un conductor
 . El conductor se marca como no disponible desde la aplicación y los clientes no lo visualizarán como opción
@@ -299,7 +309,8 @@ Define las políticas necesarias para localizar los vehículos.
 . La aplicación emite la factura correspondiente
 
 === Cancelar un trayecto por un conductor
-. El conductor no puede atender la petición una vez ha sido ya aceptada previamente y por tanto la cancela
+. El conductor no puede atender la petición una vez ya ha sido aceptada previamente y por tanto la cancela.
+. El conductor debe seleccionar un motivo para la cancelación del trayecto.
 
 === Cancelar un trayecto por un cliente
 . El cliente podrá cancelar el viaje por coste de cero euros si el conductor no ha iniciado su carrera
@@ -314,12 +325,12 @@ Se permite un fitro sencillo con rango de fechas.
 
 === Calcular la factura final de un trayecto
 . El cálculo de la factura será el número de Km's multiplicado por la tarifa que aplique dependiendo del vehículo elegido
-. *El cálculo de la factura será el número de Km's multiplicado por la tarifa que aplique al perfil del cliente y dependiendo del perfil del vehículo elegido (TODO)*
+
+. [red]#TODO:# El cálculo de la factura será el número de Km's multiplicado por la tarifa que aplique al perfil del cliente y dependiendo del perfil del vehículo elegido (TODO)
 
 === Enviar la factura de un trayecto
 . Si se ha cancelado por parte del cliente se emite factura de X euros.
-. Si se ha concluído el trayecto satisfactoriamente se emite factura la del cliente dependiendo del vehículo elegido
-. *Si se ha concluído el trayecto satisfactoriamente se emite factura del precio aplicado al perfil del cliente y dependiendo del perfil del vehículo elegido (TODO)*
+. [red]#TODO:# Si se ha concluído el trayecto satisfactoriamente se emite factura del precio aplicado al perfil del cliente y dependiendo del perfil del vehículo elegido (TODO)
 
 === PaymentMethod (TODO)
 Medio de pago por el que los usuarios del sistema abonan los conceptos del servicio.
