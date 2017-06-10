@@ -99,6 +99,9 @@ Persona que contrata un trayecto de taxi. El cliente que contrata el trayecto pu
 === Profile  (TODO)
 [red]#TODO:# Serviría por ejemplo para filtrar la colección de vehículos que se muestran a un cliente cuando solicita un trayecto.
 
+=== PaymentMethod  (TODO)
+[red]#TODO:# Serviría para incicar los metodos de pago disponibles.
+
 === Person
 Persona Física que representa a un usuario del sistema.
 
