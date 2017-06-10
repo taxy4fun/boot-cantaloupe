@@ -23,6 +23,7 @@ NOTE: - Asentar en primer lugar conocimiento tecnico más básico y transversal,
 - Repaso de comandos Git de uso común
 
 == Cuestiones para sucesivas sesiones
+- Añadir zenhub
 - Capa Controler con REST
 - Contenedores de servlerts embenidos Tomcat / Jetty / Undertown
 - Uso de Spring Profiles
