@@ -23,8 +23,7 @@ NOTE: - Asentar en primer lugar conocimiento tecnico más básico y transversal,
 - Repaso de comandos Git de uso común
 
 == Cuestiones para sucesivas sesiones
-- Añadir :hide-uri-scheme: http://www.zenhub.com
- https://www.zenhub.com/
+- Añadir http://www.zenhub.com[ZenHub]
 - Capa Controler con REST
 - Contenedores de servlerts embenidos Tomcat / Jetty / Undertown
 - Uso de Spring Profiles
