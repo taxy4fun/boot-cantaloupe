@@ -11,17 +11,22 @@ public class Example implements CommandLineRunner {
 
     private static final Logger logger = LoggerFactory.getLogger(Example.class);
 
+    private final FooProperties properties;
+
+    public Example(FooProperties properties) {
+        this.properties = properties;
+    }
+
     @Override
     public void run(String... args) throws Exception {
         logger.info("Hola melón");
         logger.debug("Hola DEBUG");
+        logger.info("Properties:" + properties);
     }
 
 
     public static void main(String[] args) throws Exception {
-
         SpringApplication.run(Example.class, args);
-
     }
 
 }

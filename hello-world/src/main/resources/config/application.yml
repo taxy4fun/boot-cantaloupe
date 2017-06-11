@@ -1,0 +1,11 @@
+logging:
+  level:
+    com.example: DEBUG
+
+foo:
+    enabled: true
+    security:
+        username: fooFromConfig
+        roles:
+          - USER_FromConfig
+          - ADMIN_FromConfig
