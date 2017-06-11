@@ -1,0 +1,1 @@
+java -Dserver.port=$PORT $JAVA_OPTS -jar hello-world/build/libs/*.jar
