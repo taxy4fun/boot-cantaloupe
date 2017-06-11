@@ -20,3 +20,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
+
+plugins {
+    id "com.heroku.sdk.heroku-gradle" version "0.2.0"
+}
