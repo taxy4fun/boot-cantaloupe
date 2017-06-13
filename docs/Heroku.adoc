@@ -9,26 +9,31 @@ Madrid
 == Instalación local
 1º Instalar Heroku CLI https://devcenter.heroku.com/articles/heroku-cli
 
-2º Asociar la cuenta de Heroku con el comando: _*"heroku login"*_
+2º Asociar la cuenta de Heroku con el comando __**"heroku login"**__
 
-3º Crear en Heroku el proyecto con el comando: _*"heroku create"*_
+3º Crear en Heroku el proyecto con el comando __**"heroku create"**__
 
-4º Crear un archivo llamado "Procfile" en la raiz del proyecto con el siguiente contenido "web: java -Dserver.port=$PORT $JAVA_OPTS -jar hello-world/build/libs/hello-world-0.0.1-SNAPSHOT.jar" (este archivo ya esta en al repo).
+4º Crear un archivo llamado "Procfile" (este archivo ya esta añadido en el repo) en la raiz del proyecto con el siguiente contenido:
+```
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar hello-world/build/libs/hello-world-0.0.1-SNAPSHOT.jar
+``` 
 
-5º Modificar el archivo "build.gradle" añadiendo el siguiente contenido:
-    task stage(dependsOn: ['build', 'clean'])
-    build.mustRunAfter clean (este archivo ya esta modificado en el repo).
+5º Modificar el archivo "build.gradle" (este archivo ya esta modificado en el repo) añadiendo el siguiente contenido:
+```
+task stage(dependsOn: ['build', 'clean']) 
+build.mustRunAfter clean
+``` 
 
 == Despliegue local
 TODO
 https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku#build-your-app-and-run-it-locally
 
 == Despliegue en cloud
-1º Realizar un commit a la rama master y hacer un push con: _*"git push heroku master"*_
+1º Realizar un commit a la rama master y hacer un push con el comando __**"git push heroku master"**__
 
-2º Una vez desplegado comprobar con el comando _*"heroku open"*_ (abre un navegador web y se conecta a: https://quiet-ridge-10883.herokuapp.com/)
+2º Una vez desplegado comprobar con el comando __**"heroku open"**__ (abre un navegador web y se conecta a: https://quiet-ridge-10883.herokuapp.com/)
 
-3º Para monitorizar en remoto los logs de la aplicación desplegada lanzar el comando _*heroku logs --tail*_
+3º Para monitorizar en remoto los logs de la aplicación desplegada lanzar el comando __**heroku logs --tail**__
 
 == Heroku GitHub Deploys
 Para asociar una cuenta de GitHub a Heroku: https://devcenter.heroku.com/articles/github-integration
