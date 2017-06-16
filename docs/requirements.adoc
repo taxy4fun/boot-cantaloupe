@@ -96,10 +96,10 @@ Persona que contrata un trayecto de taxi. El cliente que contrata el trayecto pu
 |es un usuario
 |===
 
-=== Profile  (TODO)
+=== Profile
 [red]#TODO:# Serviría por ejemplo para filtrar la colección de vehículos que se muestran a un cliente cuando solicita un trayecto.
 
-=== PaymentMethod  (TODO)
+=== PaymentMethod
 [red]#TODO:# Serviría para incicar los metodos de pago disponibles.
 
 === Person
@@ -259,8 +259,8 @@ Point ubicado en el tiempo. Una colección de footprints forma una ruta.
 |forman parte de 1 ruta
 |===
 
-== Business rules (TODO)
-En este apartado se definen las reglas de negocio que incluyen las validaciones, reglas simples y reglas compuestas por otras reglas...
+== Business rules
+[red]#TODO# En este apartado se definen las reglas de negocio que incluyen las validaciones, reglas simples y reglas compuestas por otras reglas...
 
 . Definir la política de asignación de un trayecto a un conductor
 . Definir la política de cancelación de un trayecto para un conductor. Definir la política de penalización.
@@ -285,9 +285,11 @@ Por ejemplo, un conductor recibe puntos/bonificación por haber devuelto la docu
 
 == Use Cases
 
-=== Registro conductor en la aplicación (TODO)
+=== Registro conductor en la aplicación
+[red]#TODO# 
 
-=== Registro cliente en la aplicación (TODO)
+=== Registro cliente en la aplicación
+[red]#TODO# 
 
 === Login de usuario
 . El usuario (conductor/cliente) debe estar previamente registrado
@@ -327,7 +329,8 @@ Por ejemplo, un conductor recibe puntos/bonificación por haber devuelto la docu
 . El cliente podrá cancelar el viaje por coste de cero euros si el conductor no ha iniciado su carrera
 . En el caso de que el conductor haya iniciado su carrera se le cobrará un recargo de 5 euros
 
-=== Puntuar a un Conductor (TODO)
+=== Puntuar a un Conductor
+[red]#TODO# 
 
 === Mostrar la lista de trayectos
 . El cliente podrá en cualquier momento visualizar un historial de trayectos que haya realizado con anterioridad.
@@ -337,14 +340,14 @@ Se permite un filtro sencillo con rango de fechas.
 === Calcular la factura final de un trayecto
 . El cálculo de la factura será el número de Km's multiplicado por la tarifa que aplique dependiendo del vehículo elegido
 
-. [red]#TODO:# El cálculo de la factura será el número de Km's multiplicado por la tarifa que aplique al perfil del cliente y dependiendo del perfil del vehículo elegido (TODO)
+. [red]#TODO# El cálculo de la factura será el número de Km's multiplicado por la tarifa que aplique al perfil del cliente y dependiendo del perfil del vehículo elegido
 
 === Enviar la factura de un trayecto
 . Si se ha cancelado por parte del cliente se emite factura de X euros.
-. [red]#TODO:# Si se ha concluido el trayecto satisfactoriamente se emite factura del precio aplicado al perfil del cliente y dependiendo del perfil del vehículo elegido (TODO)
+. [red]#TODO# Si se ha concluido el trayecto satisfactoriamente se emite factura del precio aplicado al perfil del cliente y dependiendo del perfil del vehículo elegido
 
-=== PaymentMethod (TODO)
-Medio de pago por el que los usuarios del sistema abonan los conceptos del servicio.
+=== PaymentMethod
+[red]#TODO# Medio de pago por el que los usuarios del sistema abonan los conceptos del servicio.
 
 ==== CreditCard
 
