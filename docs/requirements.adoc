@@ -286,10 +286,10 @@ Por ejemplo, un conductor recibe puntos/bonificación por haber devuelto la docu
 == Use Cases
 
 === Registro conductor en la aplicación
-[red]#TODO# 
+[red]#TODO#
 
 === Registro cliente en la aplicación
-[red]#TODO# 
+[red]#TODO#
 
 === Login de usuario
 . El usuario (conductor/cliente) debe estar previamente registrado
@@ -312,6 +312,9 @@ Por ejemplo, un conductor recibe puntos/bonificación por haber devuelto la docu
 === Desactivar disponibilidad por un conductor
 . El conductor se marca como no disponible desde la aplicación y los clientes no lo visualizarán como opción
 
+=== Notificar la posición de un conductor
+. Periódicamente se envía una colección de footprints al sistema. Existirá una política que calculará el intervalo de tiempo óptimo.
+
 === Iniciar un trayecto por un conductor
 . El conductor recibe una notificación de solicitud de carrera
 . El conductor acepta la solicitud y comienza la espera por parte el cliente
@@ -330,7 +333,7 @@ Por ejemplo, un conductor recibe puntos/bonificación por haber devuelto la docu
 . En el caso de que el conductor haya iniciado su carrera se le cobrará un recargo de 5 euros
 
 === Puntuar a un Conductor
-[red]#TODO# 
+[red]#TODO#
 
 === Mostrar la lista de trayectos
 . El cliente podrá en cualquier momento visualizar un historial de trayectos que haya realizado con anterioridad.
