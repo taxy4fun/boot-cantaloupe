@@ -216,15 +216,6 @@ Colección de puntos que recorre el taxi para prestar el servicio.
 
 [cols="1,3"options="header"]
 |===
-|Property
-|Description
-
-|points
-|Lista de puntos geográficos que definen la trayectoria
-|===
-
-[cols="1,3"options="header"]
-|===
 |Relationship
 |Description
 
@@ -239,9 +230,6 @@ Point ubicado en el tiempo. Una colección de footprints forma una ruta.
 |===
 |Property
 |Description
-
-|point
-|Punto geográfico
 
 |datetime
 |Fecha y hora del punto sobre la trayectoria
