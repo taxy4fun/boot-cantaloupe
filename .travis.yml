@@ -1,20 +1,19 @@
 language: java
-
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 script:
-  - ./gradlew build
-
+- "./gradlew build"
 deploy:
   provider: heroku
   api_key:
-    secure: "8c897e71-aba6-4147-a7d1-f69f8ad50e5d"
-
+    secure: 8c897e71-aba6-4147-a7d1-f69f8ad50e5d
 notifications:
   email:
     recipients:
-      - manuelf.mola@gmail.com
-      - cmarting@gmail.com
+    - manuelf.mola@gmail.com
+    - cmarting@gmail.com
     on_success: change
     on_failure: always
+env:
+  global:
+    secure: DPF6AecF6yy6K8p5sgu+geVT5NkJIWmfolLVab8MQLlhjhAvf00oGRlIZCA8kfVmgZ1gUg8slyEuWS1fKVqGJwxAm43HEPsp38IR4MwyPYtTZg/2br0jaZmbC0lqPjjTHMpIIEPymaZOTTMTMEoTrZz2HD2u2C7rFiHXvDyCo+BbprIUdOEY6WABC6RLuqjLyLeQQ9KN1ZPQth8LTPyTX/4oeJxPn7q6okgCW8MRnCqNMCouTcO/ZdsdsFu8DA3Ak+CrpxExtPT4dWmUvkvTlXfg4AlntiXT162+DPCLofmtdIWeoA9kRekIvDHxEv5K4LLuighcruw0Kcr0WZVYSKgETFbiuf1hEnXidWsc5ARj3gptbO/TKobihpsy9vRmMb/UyIIgPFmS5EG6iiyWI7bHCZLJNxexjvfZ8JBp4SzL4cdFgkf2z5tLhhzWbjicAZ54o1I1aZB7PXPzzqgD7FvUn/hO8dYGZPYILQBmcxRIdmuUoDn/RjBNoAuvlb58plFsgQj4ugft5xHc4Dr+/CnnudKoN/mW1PDX/lKxvUQo9uXqZNy7FJ9zTyVODt6PAW2mR0V3bljpo8obficFHPdUVi09BGdH/oLmBtxvi4SdzhAKkXyzNmKC8GONTZI7hqcsNjU+s+9kCx2e0bSNjtuoXoijVIJErZzxdBjwDN4=
