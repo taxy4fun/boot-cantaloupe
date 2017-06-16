@@ -6,7 +6,7 @@ Madrid
 :source-highlighter: coderay
 :experimental:
 
-image:https://travis-ci.org/butcherless/boot-cantaloupe.svg?branch=master[] -> link:https://travis-ci.org/butcherless/boot-cantaloupe[master]
+image:https://travis-ci.org/taxy4fun/boot-cantaloupe.svg?branch=master[] -> link:https://travis-ci.org/taxy4fun/boot-cantaloupe[master]
 
 image:https://travis-ci.org/butcherless/boot-cantaloupe.svg?branch=pruebas-manu[] -> link:https://travis-ci.org/butcherless/boot-cantaloupe[pruebas-manu]
 
