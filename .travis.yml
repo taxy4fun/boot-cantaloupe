@@ -6,6 +6,11 @@ jdk:
 script:
   - ./gradlew build
 
+deploy:
+  provider: heroku
+  api_key:
+    secure: "8c897e71-aba6-4147-a7d1-f69f8ad50e5d"
+
 notifications:
   email:
     recipients:
