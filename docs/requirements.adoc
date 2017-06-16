@@ -348,5 +348,5 @@ Medio de pago por el que los usuarios del sistema abonan los conceptos del servi
 
 ==== CreditCard
 
-=== Receipt (TODO)
-Factura correspondiente al servicio prestado.
+=== Receipt
+[red]#TODO# Factura correspondiente al servicio prestado.
