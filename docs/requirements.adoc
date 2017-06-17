@@ -19,7 +19,7 @@ Otro ejemplo, un cliente desear realizar una carrera desde un parque en el que s
 En este apartado se definen las entidades de negocio y sus atributos...
 
 .Model
-image::docs/model-JDL.png[Model,width=617,scaledwidth=100%]
+image::model-JDL.png[Model,width=617,scaledwidth=100%]
 
 === User
 Usuario del servicio. En la primera versión podrán ser: Driver y Customer.
