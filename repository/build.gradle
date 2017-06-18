@@ -11,7 +11,7 @@ ext { springBootVersion = '1.5.4.RELEASE' }
 apply plugin: 'java'
 
 jar {
-    baseName = 'minitaxi-repository'
+    baseName = 'taxy4fun-repository'
     version = '0.0.1-SNAPSHOT'
 }
 

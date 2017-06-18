@@ -11,7 +11,7 @@ image:https://travis-ci.org/taxy4fun/boot-cantaloupe.svg?branch=master[] -> link
 image:https://travis-ci.org/butcherless/boot-cantaloupe.svg?branch=pruebas-manu[] -> link:https://travis-ci.org/butcherless/boot-cantaloupe[pruebas-manu]
 
 
-NOTE: testing and tasting the Boot fruit
+NOTE: testing and tasting the Boot fruit. Java-8, forgive us!!!
 
 == JDK & friends download and installation
 
@@ -26,14 +26,14 @@ NOTE: testing and tasting the Boot fruit
  java -version
 
 
-. Gradle 3.5
+. Gradle 4.0
 
  wget --progress=dot:giga \
-   https://services.gradle.org/distributions/gradle-3.5-all.zip
- sudo unzip gradle-3.5-all.zip -d /usr/local/share/
- sudo ln -sf /usr/local/share/gradle-3.5/bin/gradle /usr/local/bin/gradle
+   https://services.gradle.org/distributions/gradle-4.0-all.zip
+ sudo unzip gradle-4.0-all.zip -d /usr/local/share/
+ sudo ln -sf /usr/local/share/gradle-4.0/bin/gradle /usr/local/bin/gradle
  gradle -version
- gradle wrapper --gradle-version 3.5
+ gradle wrapper --gradle-version 4.0
 
 
 . Maven 3.5.0
