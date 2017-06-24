@@ -1,4 +1,4 @@
-package com.example;
+package com.taxy4fun;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,8 +29,8 @@ public class Example implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("Hola melón");
-        logger.debug("Hola DEBUG");
+        logger.info("message level info");
+        logger.debug("message leve debug");
         logger.info("Properties:" + properties);
     }
 

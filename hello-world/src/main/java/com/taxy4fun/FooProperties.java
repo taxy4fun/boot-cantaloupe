@@ -1,4 +1,4 @@
-package com.example;
+package com.taxy4fun;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
