@@ -27,16 +27,20 @@ public class UserRepositoryTest {
 
     @Test
     public void testCreate() {
-        User user = new User();
-        user.setFirstname("Chiquito");
-        user.setLastname(PECADOR);
-        this.userRepository.save(user);
+        User userBean = new User();
+        userBean.setFirstname("Chiquito");
+        userBean.setLastname(PECADOR);
+        assertThat(userBean.getId()).isNull();
+        // bean persistence
+        this.userRepository.save(userBean);
 
-        assertThat(user.getId()).isNotNull();
+        // bean -> entity
+        assertThat(userBean.getId()).isNotNull();
 
+        // entity search
         User userEntity = this.userRepository.findByLastname(PECADOR);
-        assertThat(user).isNotNull();
-        assertThat(user.getLastname()).isEqualTo(PECADOR);
+        assertThat(userEntity).isNotNull();
+        assertThat(userEntity.getLastname()).isEqualTo(PECADOR);
     }
 
 }
