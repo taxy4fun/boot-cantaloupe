@@ -14,6 +14,7 @@ plugins {
 ext { springBootVersion = '1.5.4.RELEASE' }
 
 apply plugin: 'java'
+apply plugin: 'jacoco'
 
 jar {
     baseName = 'taxy4fun-web'
@@ -32,6 +33,26 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
 	compile "org.apache.commons:commons-lang3:3.5"
     testCompile("org.springframework.boot:spring-boot-starter-test")
+}
+
+jacoco {
+    toolVersion = "0.7.9"
+}
+
+test {
+    jacoco {
+        append = false
+        destinationFile = file("$buildDir/jacoco/jacocoTest.exec")
+    }
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.enabled true
+    }
 }
 
 bootRepackage {
