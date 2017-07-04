@@ -8,6 +8,10 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.Date;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -18,7 +22,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 public class UserRepositoryTest {
 
-    public static final String PECADOR = "Pecador";
+    private static final String FIRST_NAME = "Pecador";
+
+    private static final String LAST_NAME = "Pradera";
+
+    private static final boolean ACTIVE = true;
+
+    private static final LocalDate LOCAL_DATE = LocalDate.of(1985, Month.DECEMBER, 19);
+
+
     @Autowired
     private TestEntityManager entityManager;
 
@@ -28,8 +40,11 @@ public class UserRepositoryTest {
     @Test
     public void testCreate() {
         User userBean = new User();
-        userBean.setFirstname("Chiquito");
-        userBean.setLastname(PECADOR);
+        userBean.setFirstname(FIRST_NAME);
+        userBean.setLastname(LAST_NAME);
+        userBean.setActive(ACTIVE);
+        userBean.setDateOfBirth(LOCAL_DATE);
+
         assertThat(userBean.getId()).isNull();
         // bean persistence
         this.userRepository.save(userBean);
@@ -38,9 +53,12 @@ public class UserRepositoryTest {
         assertThat(userBean.getId()).isNotNull();
 
         // entity search
-        User userEntity = this.userRepository.findByLastname(PECADOR);
+        User userEntity = this.userRepository.findByLastname(LAST_NAME);
         assertThat(userEntity).isNotNull();
-        assertThat(userEntity.getLastname()).isEqualTo(PECADOR);
+        assertThat(userEntity.getFirstname()).isEqualTo(FIRST_NAME);
+        assertThat(userEntity.getLastname()).isEqualTo(LAST_NAME);
+        assertThat(userEntity.getActive()).isEqualTo(ACTIVE);
+        assertThat(userEntity.getDateOfBirth()).isEqualTo(LOCAL_DATE);
     }
 
 }

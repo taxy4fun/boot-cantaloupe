@@ -5,6 +5,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * Created by cmartin on 23/06/2017.
@@ -20,7 +22,7 @@ public class User {
 
     private String lastname;
 
-    private Integer age;
+    private LocalDate dateOfBirth;
 
     private Boolean active;
 
@@ -40,12 +42,12 @@ public class User {
         this.lastname = lastname;
     }
 
-    public Integer getAge() {
-        return age;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public Boolean getActive() {
@@ -70,7 +72,7 @@ public class User {
                 .append("id", id)
                 .append("firstname", firstname)
                 .append("lastname", lastname)
-                .append("age", age)
+                .append("dateOfBirth", dateOfBirth)
                 .append("active", active)
                 .toString();
     }
