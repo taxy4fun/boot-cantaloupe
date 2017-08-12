@@ -1,1 +1,1 @@
-include 'hello-world', 'repository'
+include 'hello-world', 'service-api', 'repository'
