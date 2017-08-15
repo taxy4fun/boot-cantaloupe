@@ -29,11 +29,11 @@ NOTE: testing and tasting the Boot fruit. Java-8, forgive us!!!
 . Gradle 4.0
 
  wget --progress=dot:giga \
-   https://services.gradle.org/distributions/gradle-4.0-all.zip
- sudo unzip gradle-4.0-all.zip -d /usr/local/share/
- sudo ln -sf /usr/local/share/gradle-4.0/bin/gradle /usr/local/bin/gradle
+   https://services.gradle.org/distributions/gradle-4.1-all.zip
+ sudo unzip gradle-4.1-all.zip -d /usr/local/share/
+ sudo ln -sf /usr/local/share/gradle-4.1/bin/gradle /usr/local/bin/gradle
  gradle -version
- gradle wrapper --gradle-version 4.0
+ gradle wrapper --gradle-version 4.1
 
 
 . Maven 3.5.0

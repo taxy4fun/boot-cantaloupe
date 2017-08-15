@@ -9,7 +9,7 @@ Madrid
 NOTE: Bajo el amparo de las iniciativas _Stop Smoke Sellers_, _Research gives you the Kempston_, _Don't warm up yourself_, _F5 Task is not enough_, _Save the yoghurts_, _Copy&Paste == time waste_ y con fines didácticos se quiere desarrollar un documento de requisitos que describe una sencilla funcionalidad empresarial.
 
 == Resumen
-Se quiere construir un Sistema de Información que permita la explotación de un Servicio de Taxi. Una vez registrados en el sistema los dos perfiles básicos, _Driver_ y _Customer_, un customer solicitará un _Journey_ a un _Driver_ para ir desde un _Point_ origen a otro destino. El _Journey_ tiene lugar a través de una _Route_ que visitará una colección de _Point_. Una vez concluido el _Journey_ se emitirá un _Receipt_ con el detalle del servicio. Tanto _Driver_ como _Customer_ disponen de varios _Profile_ que permiten personalizar la oferta y la demanda del servicio.
+Se quiere construir un Sistema de Información que permita la explotación de un Servicio de Taxi. Una vez registrados en el sistema los dos perfiles básicos, _Driver_ y _Customer_, un customer solicitará un _Journey_ a un _Driver_ para ir desde un _Point_ origen a otro destino. El _Journey_ tiene lugar a través de una _Route_ que visitará una colección de _Points_. Una vez concluido el _Journey_ se emitirá un _Receipt_ con el detalle del servicio. Tanto _Driver_ como _Customer_ disponen de varios _Profile_ que permiten personalizar la oferta y la demanda del servicio.
 
 Por ejemplo, un cliente desea realizar un trayecto desde su domicilio al aeropuerto por la ruta más rápida disponible en el instante que solicita el servicio.
 
@@ -38,8 +38,15 @@ Usuario del servicio. En la primera versión podrán ser: Driver y Customer.
 |registerDate
 |Fecha de registro
 
-|retry
+|lastLoginDate
+|Fecha del último login
+
+|loginAttemptNumber
 |Número de reintentos de acceso consumidos
+
+|status
+|Estado de la cuenta de usuario (activa, bloqueada, expirada etc.)
+
 |===
 
 [cols="1,3"options="header"]
@@ -103,7 +110,7 @@ Persona que contrata un trayecto de taxi. El cliente que contrata el trayecto pu
 [red]#TODO:# Serviría por ejemplo para filtrar la colección de vehículos que se muestran a un cliente cuando solicita un trayecto.
 
 === PaymentMethod
-[red]#TODO:# Serviría para incicar los metodos de pago disponibles.
+[red]#TODO:# Serviría para indicar los metodos de pago disponibles.
 
 === Person
 Persona Física que representa a un usuario del sistema.
@@ -135,6 +142,16 @@ Persona Física que representa a un usuario del sistema.
 |Ciudad del cliente
 |===
 
+[cols="1,3"options="header"]
+|===
+|Relationship
+|Description
+
+|PaymentMethod
+|método de pago elegido por la persona
+|===
+
+
 === Vehicle
 Vehículo con el que el conductor presta el servicio a un  cliente.
 
@@ -151,6 +168,9 @@ Vehículo con el que el conductor presta el servicio a un  cliente.
 
 |description
 |descripción detallada del vehículo
+
+|photo
+|fotografía del vehículo
 |===
 
 [cols="1,3"options="header"]
@@ -273,16 +293,23 @@ Por ejemplo, un conductor recibe puntos/bonificación por haber devuelto la docu
 
 
 === PaymentService
+Realiza la comunicación con el Sistema de cobro para los abonos del servicio por parte del Customer.
 
 == Use Cases
 
-=== Registro conductor en la aplicación
+=== Registro de Driver en la aplicación
 [red]#TODO#
 
-=== Registro cliente en la aplicación
+=== Registro de Vehicle en la aplicación
 [red]#TODO#
 
-=== Login de usuario
+=== Asignar Driver a Vehicle
+[red]#TODO#
+
+=== Registro de Customer en la aplicación
+[red]#TODO#
+
+=== Login de User
 . El usuario (conductor/cliente) debe estar previamente registrado
 
 === Solicitar un trayecto por un cliente
@@ -323,20 +350,20 @@ Por ejemplo, un conductor recibe puntos/bonificación por haber devuelto la docu
 . El cliente podrá cancelar el viaje por coste de cero euros si el conductor no ha iniciado su carrera
 . En el caso de que el conductor haya iniciado su carrera se le cobrará un recargo de 5 euros
 
-=== Puntuar a un Conductor
+=== Puntuar a un Driver
 [red]#TODO#
 
-=== Mostrar la lista de trayectos
+=== Mostrar la lista de Journeys
 . El cliente podrá en cualquier momento visualizar un historial de trayectos que haya realizado con anterioridad.
 
 Se permite un filtro sencillo con rango de fechas.
 
-=== Calcular la factura final de un trayecto
+=== Calcular la Receipt final de un trayecto
 . El cálculo de la factura será el número de Km's multiplicado por la tarifa que aplique dependiendo del vehículo elegido
 
 . [red]#TODO# El cálculo de la factura será el número de Km's multiplicado por la tarifa que aplique al perfil del cliente y dependiendo del perfil del vehículo elegido
 
-=== Enviar la factura de un trayecto
+=== Enviar la Receipt de un trayecto
 . Si se ha cancelado por parte del cliente se emite factura de X euros.
 . [red]#TODO# Si se ha concluido el trayecto satisfactoriamente se emite factura del precio aplicado al perfil del cliente y dependiendo del perfil del vehículo elegido
 
