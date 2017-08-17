@@ -315,6 +315,13 @@ Definir la regla de negocio para completar la operación.
 
 === Login de User
 . El usuario (conductor/cliente) debe estar previamente registrado
+. El usuario introduce su email
+. El usuario introduce su contraseña
+. El sistema validad las credenciales
+. El sistema actualiza la fecha de último acceso
+. El sistema actualiza el contador de accesos
+. El sistema muestra la pantalla principal para el usuario
+
 
 === Solicitar un trayecto por un cliente
 . El cliente se autentica en la aplicación
