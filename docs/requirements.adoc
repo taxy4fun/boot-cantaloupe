@@ -331,6 +331,8 @@ Definir la regla de negocio para completar la operación.
 [red]#TODO#
 
 === Login de User
+ https://stackoverflow.com/questions/3297048/403-forbidden-vs-401-unauthorized-http-responses?rq=1
+
 . El usuario (conductor/cliente) debe estar previamente registrado
 . El usuario introduce su email
 . El usuario introduce su contraseña
