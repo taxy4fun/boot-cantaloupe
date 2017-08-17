@@ -339,6 +339,15 @@ Definir la regla de negocio para completar la operación.
 . El sistema actualiza el contador de accesos
 . El sistema muestra la pantalla principal para el usuario
 
+. Definición del servicio:
+.. Endpoint: /v1/users/
+.. Method: POST
+.. Parámetros de entrada:
+... Username
+... Password
+.. Respuestas:
+... 401 - Unauthorized
+... 200 - Ok
 
 === Solicitar un trayecto por un cliente
 . El cliente se autentica en la aplicación
