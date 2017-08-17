@@ -314,6 +314,7 @@ Realiza la comunicación con el Sistema de cobro para los abonos del servicio po
 . El sistema valida el permiso de conducción (Letra del DNI con respecto a dígitos)
 . El sistema valida la fecha de renovación.
 
+
 === Registro de Customer en la aplicación
 . El cliente accede a la pantalla de registro desde el botón del menú de acceso inicial.
 . El cliente rellena los datos correspondientes a su perfil.
@@ -401,3 +402,6 @@ Se permite un filtro sencillo con rango de fechas.
 
 === Receipt
 [red]#TODO# Factura correspondiente al servicio prestado.
+
+=== Almacenar driver en favoritos del customer
+[red]#TODO#
