@@ -74,6 +74,13 @@ Conductor de un vehículo que transporta a un cliente desde un lugar a otro.
 
 |available
 |disponibilidad del conductor
+
+|driver license
+|Permiso de conducción del reino de España
+
+|expirationDate
+|Fecha de caducidad del permiso
+
 |===
 
 [cols="1,3"options="header"]
@@ -298,19 +305,28 @@ Realiza la comunicación con el Sistema de cobro para los abonos del servicio po
 == Use Cases
 
 === Registro de Driver en la aplicación
-[red]#TODO#
+. El conductor accede a la pantalla de registro desde el botón del menú de acceso inicial.
+. El conductor rellena los datos correspondientes a su perfil.
+. El conductor envía los datos informados.
+. El sistema valida los datos obligatorios de alta.
+. El sistema valida la coincidencia de password's.
+. El sistema valida el formato del email.
+. El sistema valida el permiso de conducción (Letra del DNI con respecto a dígitos)
+. El sistema valida la fecha de renovación.
 
 === Registro de Customer en la aplicación
-[red]#TODO#
+. El cliente accede a la pantalla de registro desde el botón del menú de acceso inicial.
+. El cliente rellena los datos correspondientes a su perfil.
+. El cliente envía los datos informados.
+. El sistema valida los datos obligatorios de alta.
+. El sistema valida la coincidencia de password's.
+. El sistema valida el formato del email.
 
 === Registro de Vehicle en la aplicación
 [red]#TODO#
 Definir la regla de negocio para completar la operación.
 
 === Asignar Driver a Vehicle
-[red]#TODO#
-
-=== Registro de Customer en la aplicación
 [red]#TODO#
 
 === Login de User
