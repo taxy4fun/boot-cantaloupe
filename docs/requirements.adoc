@@ -405,3 +405,6 @@ Se permite un filtro sencillo con rango de fechas.
 
 === Almacenar driver en favoritos del customer
 [red]#TODO#
+
+=== Obtener la lista de drivers para un customer
+[red]#TODO#
