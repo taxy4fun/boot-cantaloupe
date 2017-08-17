@@ -22,15 +22,15 @@ En este apartado se definen las entidades de negocio y sus atributos...
 image::model-JDL.png[Model,width=617,scaledwidth=100%]
 
 === User
-Usuario del servicio. En la primera versión podrán ser: Driver y Customer.
+Usuario del servicio. En la primera versión podrán ser: Driver, Customer y Owner.
 
 [cols="1,3"options="header"]
 |===
 |Property
 |Description
 
-|username
-|nombre del usuario
+|id
+|Identificador del usuario
 
 |password
 |clave de acceso del usuario
@@ -300,8 +300,12 @@ Realiza la comunicación con el Sistema de cobro para los abonos del servicio po
 === Registro de Driver en la aplicación
 [red]#TODO#
 
+=== Registro de Customer en la aplicación
+[red]#TODO#
+
 === Registro de Vehicle en la aplicación
 [red]#TODO#
+Definir la regla de negocio para completar la operación.
 
 === Asignar Driver a Vehicle
 [red]#TODO#
