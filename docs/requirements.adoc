@@ -314,6 +314,14 @@ Realiza la comunicación con el Sistema de cobro para los abonos del servicio po
 . El sistema valida el permiso de conducción (Letra del DNI con respecto a dígitos)
 . El sistema valida la fecha de renovación.
 
+. Definición del servicio:
+.. Endpoint: /v1/drivers/
+.. Method: POST
+.. Parámetros de entrada:
+... [red]#TODO#
+.. Respuestas:
+... 201 - Created
+... [red]#TODO#
 
 === Registro de Customer en la aplicación
 . El cliente accede a la pantalla de registro desde el botón del menú de acceso inicial.
@@ -322,6 +330,15 @@ Realiza la comunicación con el Sistema de cobro para los abonos del servicio po
 . El sistema valida los datos obligatorios de alta.
 . El sistema valida la coincidencia de password's.
 . El sistema valida el formato del email.
+
+. Definición del servicio:
+.. Endpoint: /v1/customers/
+.. Method: POST
+.. Parámetros de entrada:
+... [red]#TODO#
+.. Respuestas:
+... 201 - Created
+... [red]#TODO#
 
 === Registro de Vehicle en la aplicación
 [red]#TODO#
@@ -418,4 +435,4 @@ Se permite un filtro sencillo con rango de fechas.
 [red]#TODO#
 
 === Obtener la lista de drivers para un customer
-[red]#TODO#
+[red]#TODO# jena
