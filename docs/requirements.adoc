@@ -304,7 +304,8 @@ Realiza la comunicación con el Sistema de cobro para los abonos del servicio po
 
 == Use Cases
 
-=== Registro de Driver en la aplicación
+=== Registro de <<Driver>> en la aplicación
+.Flujo:
 . El conductor accede a la pantalla de registro desde el botón del menú de acceso inicial.
 . El conductor rellena los datos correspondientes a su perfil.
 . El conductor envía los datos informados.
@@ -314,16 +315,17 @@ Realiza la comunicación con el Sistema de cobro para los abonos del servicio po
 . El sistema valida el permiso de conducción (Letra del DNI con respecto a dígitos)
 . El sistema valida la fecha de renovación.
 
-. Definición del servicio:
+.Definición del servicio:
 .. Endpoint: /v1/drivers/
 .. Method: POST
 .. Parámetros de entrada:
-... [red]#TODO#
+... <<Driver>>
 .. Respuestas:
-... 201 - Created
-... [red]#TODO#
+... https://httpstatuses.com/201[201] - Created al registrar correctamente un conductor
+... https://httpstatuses.com/409[409] - Conflict al intentar registrar un conductor existente
 
-=== Registro de Customer en la aplicación
+=== Registro de <<Customer>> en la aplicación
+.Flujo:
 . El cliente accede a la pantalla de registro desde el botón del menú de acceso inicial.
 . El cliente rellena los datos correspondientes a su perfil.
 . El cliente envía los datos informados.
@@ -331,14 +333,14 @@ Realiza la comunicación con el Sistema de cobro para los abonos del servicio po
 . El sistema valida la coincidencia de password's.
 . El sistema valida el formato del email.
 
-. Definición del servicio:
+.Definición del servicio:
 .. Endpoint: /v1/customers/
 .. Method: POST
 .. Parámetros de entrada:
-... [red]#TODO#
+... <<Customer>>
 .. Respuestas:
-... 201 - Created
-... [red]#TODO#
+... https://httpstatuses.com/201[201] - Created al registrar correctamente un cliente
+... https://httpstatuses.com/409[409] - Conflict al intentar registrar un cliente existente
 
 === Registro de Vehicle en la aplicación
 [red]#TODO#
@@ -348,8 +350,10 @@ Definir la regla de negocio para completar la operación.
 [red]#TODO#
 
 === Login de User
- https://stackoverflow.com/questions/3297048/403-forbidden-vs-401-unauthorized-http-responses?rq=1
+.Enlaces de interés:
+. https://stackoverflow.com/questions/3297048/403-forbidden-vs-401-unauthorized-http-responses?rq=1[StackOverflow - Code 401 - Unauthorized response]
 
+.Flujo:
 . El usuario (conductor/cliente) debe estar previamente registrado
 . El usuario introduce su email
 . El usuario introduce su contraseña
@@ -358,15 +362,14 @@ Definir la regla de negocio para completar la operación.
 . El sistema actualiza el contador de accesos
 . El sistema muestra la pantalla principal para el usuario
 
-. Definición del servicio:
-.. Endpoint: /v1/users/
-.. Method: POST
-.. Parámetros de entrada:
-... Username
-... Password
-.. Respuestas:
-... 401 - Unauthorized
-... 200 - Ok
+.Definición del servicio:
+. Endpoint: /v1/sessions/
+. Method: POST
+. Parámetros de entrada:
+.. <<User>>
+. Respuestas:
+.. https://httpstatuses.com/401[401] - Unauthorized en login inválido
+.. https://httpstatuses.com/302[302] - Found en login válido y redirección a home
 
 === Solicitar un trayecto por un cliente
 . El cliente se autentica en la aplicación
