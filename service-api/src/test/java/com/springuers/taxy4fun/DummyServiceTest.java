@@ -11,6 +11,7 @@ import static org.mockito.Mockito.when;
 
 public class DummyServiceTest {
 
+    public static final long RESOURCE_ID = 1L;
     private final String EXCEPTION_MESSAGE = "service exception";
     private DummyService service;
 
@@ -27,7 +28,7 @@ public class DummyServiceTest {
         Try<OperationOneOutDto> outDto = this.service.operationOne(newInDto());
 
         Assert.assertFalse(outDto.isFailure());
-        Assert.assertEquals(Long.valueOf(1L), outDto.get().getId());
+        Assert.assertEquals(Long.valueOf(RESOURCE_ID), outDto.get().getId());
     }
 
     @Test
@@ -47,12 +48,12 @@ public class DummyServiceTest {
     }
 
     private OperationOneInDto newInDto() {
-        final OperationOneInDto dto = new OperationOneInDto(1L, "message");
+        final OperationOneInDto dto = new OperationOneInDto(RESOURCE_ID, "message");
         return dto;
     }
 
     private Try<OperationOneOutDto> newSuccessOutDto() {
-        final OperationOneOutDto dto = new OperationOneOutDto(1L);
+        final OperationOneOutDto dto = new OperationOneOutDto(RESOURCE_ID);
         return Try.of(() -> dto);
     }
 

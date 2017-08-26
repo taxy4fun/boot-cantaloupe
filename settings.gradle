@@ -1,1 +1,6 @@
-include 'hello-world', 'service-api', 'repository'
+rootProject.name = 'taxy4fun-webapp'
+
+include 'hello-world'
+include 'controller'
+include 'service-api'
+include 'repository'

@@ -9,4 +9,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface DummyService {
     Try<OperationOneOutDto> operationOne(OperationOneInDto inDto);
+
+    Try<CreateVehicleResponse> create(CreateVehicleRequest request);
 }
