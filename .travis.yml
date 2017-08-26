@@ -1,15 +1,11 @@
 language: java
+
 jdk:
 - oraclejdk8
+
 script:
-- "./gradlew build"
-deploy:
-  provider: heroku
-  api_key:
-    secure: tIk4GjaCBIjAXQjjDWnKhc//3/eo9UmxTleREKBAR9FrMCrcuM0NAWmLAJatZ68Te6APNfXHNieI1JR4qWYEdMhnWJixaEJ86ZrGYPGHZaqCsosys8ou6CRTbbfJrV7reaZI/xM4rg9A9PJvzpQnRAvhb24hkJGDYIoDlf3O/zEO8yZWEnKtyLiiWFWhtRrrJAO1ANXwISgvOiQ0HsBMBejKXxAo8V2umuJ/DcwpVb2U2RK01YS9PXbbN9s9h4mamuPkd/1U5E6RNlSttKmwfeLINTwn8Xiztjzau8kaOX5iLr6vVGApEQgOYkhfkDCPVkw3+nnfEPJ+U8D4QwxRAqqRdBm8zQTm0tUFATNjQM137ryEvZruSiAqOBpHVVhGhqgKYkvf4ZnpFwhikMpcBaOmZSG50IbsP47gxAmIxVBjfrqkGeJK8nVzB0Aiqtjs55PUznpKKhyZ4bjbOH4WgZN02mpckQnkYDul8XL9aNxB9PeIOts8qKwnim7i62OXR0sKAgImmFxLFcSeOLfcymIBNYzMWpk8PxPq7k9EfJCiZCZT3L/1vh2iCo5OdSyfTCo8kaEA53YYmPoOc4Y0kSJwmBvT9K2PDy4YtFy4Y9DL3FVBWfg6wMXdeFMBNAYjiJmksrMsUoUWwvcae4QJ6SKua36FhJWmsg3ltZwht1s=
-  app: boot-cantaloupe
-  on:
-    repo: taxy4fun/boot-cantaloupe
+- ./gradlew build
+
 notifications:
   email:
     recipients:
@@ -17,6 +13,7 @@ notifications:
     - cmarting@gmail.com
     on_success: change
     on_failure: always
+
 env:
   global:
     secure: DPF6AecF6yy6K8p5sgu+geVT5NkJIWmfolLVab8MQLlhjhAvf00oGRlIZCA8kfVmgZ1gUg8slyEuWS1fKVqGJwxAm43HEPsp38IR4MwyPYtTZg/2br0jaZmbC0lqPjjTHMpIIEPymaZOTTMTMEoTrZz2HD2u2C7rFiHXvDyCo+BbprIUdOEY6WABC6RLuqjLyLeQQ9KN1ZPQth8LTPyTX/4oeJxPn7q6okgCW8MRnCqNMCouTcO/ZdsdsFu8DA3Ak+CrpxExtPT4dWmUvkvTlXfg4AlntiXT162+DPCLofmtdIWeoA9kRekIvDHxEv5K4LLuighcruw0Kcr0WZVYSKgETFbiuf1hEnXidWsc5ARj3gptbO/TKobihpsy9vRmMb/UyIIgPFmS5EG6iiyWI7bHCZLJNxexjvfZ8JBp4SzL4cdFgkf2z5tLhhzWbjicAZ54o1I1aZB7PXPzzqgD7FvUn/hO8dYGZPYILQBmcxRIdmuUoDn/RjBNoAuvlb58plFsgQj4ugft5xHc4Dr+/CnnudKoN/mW1PDX/lKxvUQo9uXqZNy7FJ9zTyVODt6PAW2mR0V3bljpo8obficFHPdUVi09BGdH/oLmBtxvi4SdzhAKkXyzNmKC8GONTZI7hqcsNjU+s+9kCx2e0bSNjtuoXoijVIJErZzxdBjwDN4=
