@@ -4,14 +4,13 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.io.Serializable;
-import java.net.URL;
 
 public class Vehicle implements Serializable {
     private Long id;
     private String plate;
     private String brand;
     private String description;
-    private URL photo;
+    private String photo;
 
     public Vehicle() {
     }
@@ -53,10 +52,10 @@ public class Vehicle implements Serializable {
     }
 
     public String getPhoto() {
-        return photo.toString();
+        return photo;
     }
 
-    public void setPhoto(final URL photo) {
+    public void setPhoto(final String photo) {
         this.photo = photo;
     }
 

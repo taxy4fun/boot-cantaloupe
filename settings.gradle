@@ -1,5 +1,6 @@
 rootProject.name = 'taxy4fun-webapp'
 
+include 'test-utils'
 include 'hello-world'
 include 'controller'
 include 'service-api'

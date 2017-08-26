@@ -10,9 +10,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+/*
+http://websystique.com/springmvc/spring-mvc-4-restful-web-services-crud-example-resttemplate/
+ */
 
 @RestController
 public class Taxy4FunController {
@@ -24,12 +27,10 @@ public class Taxy4FunController {
         this.dummyService = dummyService;
     }
 
-//    @PostMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
-//            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @RequestMapping(value = "/vehicles",
-            method = RequestMethod.POST,
+    @PostMapping(value = "/vehicles",
+            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<Vehicle> createVehicle(final Vehicle request) {
+    public ResponseEntity<Vehicle> createVehicle(@RequestBody final Vehicle request) {
 
         this.logger.debug("request: {}", request.toString());
 
@@ -38,14 +39,16 @@ public class Taxy4FunController {
         // TODO mapper.facadeToService
         final CreateVehicleRequest serviceRequest = new CreateVehicleRequest();
 
+        //TODO
         Try<CreateVehicleResponse> createVehicleResponses = this.dummyService.create(serviceRequest);
 
         // TODO mapper.serviceToFacade
-
         Vehicle response = new Vehicle(1L);
 
         this.logger.debug("response: {}", response.toString());
 
-        return new ResponseEntity<>( HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+
 }
