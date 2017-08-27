@@ -5,7 +5,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.mockito.ArgumentMatchers.any;
+import static io.vavr.API.*;
+import static io.vavr.Patterns.$Failure;
+import static io.vavr.Patterns.$Success;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -14,10 +17,12 @@ public class DummyServiceTest {
     public static final long RESOURCE_ID = 1L;
     private final String EXCEPTION_MESSAGE = "service exception";
     private DummyService service;
+    private VehicleService vehicleService;
 
     @Before
     public void setUp() {
         this.service = mock(DummyService.class);
+        this.vehicleService = mock(VehicleService.class);
     }
 
     @Test
@@ -57,5 +62,38 @@ public class DummyServiceTest {
         return Try.of(() -> dto);
     }
 
+
+    @Test
+    public void testTryOk() {
+        when(this.service.operationOne(1)).thenReturn(Try.success("message"));
+        when(this.service.operationTwo(anyString())).thenReturn(Try.success(2L));
+        when(this.service.operationThree(anyLong())).thenReturn(Try.success(true));
+
+        Try<Boolean> booleanTry = this.service.operationOne(1)
+                .flatMap(s -> this.service.operationTwo(s))
+                .flatMap(l -> this.service.operationThree(l));
+
+        System.out.println("result: " + getResult(booleanTry));
+    }
+
+    @Test
+    public void testTryKo() {
+        when(this.service.operationOne(1)).thenReturn(Try.success("message"));
+        when(this.service.operationTwo(anyString())).thenReturn(Try.failure(new RuntimeException("error")));
+        when(this.service.operationThree(anyLong())).thenReturn(Try.success(true));
+
+        Try<Boolean> booleanTry = this.service.operationOne(1)
+                .flatMap(s -> this.service.operationTwo(s))
+                .flatMap(l -> this.service.operationThree(l));
+
+        System.out.println("result: " + getResult(booleanTry));
+    }
+
+    private String getResult(final Try<Boolean> booleanTry) {
+        return Match(booleanTry).of(
+                Case($Success($()), b -> b.toString()),
+                Case($Failure($()), f -> f.getMessage())
+        );
+    }
 
 }

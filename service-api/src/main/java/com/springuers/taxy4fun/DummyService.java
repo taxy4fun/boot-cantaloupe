@@ -11,4 +11,13 @@ public interface DummyService {
     Try<OperationOneOutDto> operationOne(OperationOneInDto inDto);
 
     Try<CreateVehicleResponse> create(CreateVehicleRequest request);
+
+    Try<String> operationOne(Integer i);
+
+    Try<Long> operationTwo(String s);
+
+    Try<Boolean> operationThree(Long l);
+
+    Try<Void> operationFour(Integer i);
+
 }

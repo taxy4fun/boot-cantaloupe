@@ -2,8 +2,6 @@ package com.springuers.taxy4fun.test;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.springuers.taxy4fun.CreateVehicleResponse;
-import io.vavr.control.Try;
 
 import java.io.IOException;
 
@@ -14,8 +12,4 @@ public class TestUtils {
         return mapper.writeValueAsString(object);
     }
 
-    public static Try<CreateVehicleResponse> newCreateVehicleResponse() {
-
-        return Try.of(() -> new CreateVehicleResponse());
-    }
 }

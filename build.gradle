@@ -4,7 +4,14 @@ allprojects {
     }
 
     apply plugin: 'jacoco'
+    apply plugin: 'idea'
 
+    idea {
+        module {
+            downloadJavadoc = true
+        }
+    }
+    
     ext { springBootVersion = '1.5.6.RELEASE' }
 
 }

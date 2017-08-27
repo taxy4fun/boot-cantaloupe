@@ -12,8 +12,6 @@ jar {
 }
 
 dependencies {
-    compile project(':service-api')
-
     compile 'com.fasterxml.jackson.core:jackson-databind:2.8.8'
     compile 'com.fasterxml.jackson.core:jackson-core:2.8.8'
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.3'
