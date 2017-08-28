@@ -443,3 +443,14 @@ Se permite un filtro sencillo con rango de fechas.
 
 == URL frontal develop 
 Aqui se pueden ver las pantallas https://backoffice-4yf-develop.herokuapp.com/
+
+== Referencias
+=== Rest MVC
+ . https://spring.io/guides/tutorials/bookmarks/
+ . https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc
+ . http://memorynotfound.com/unit-test-spring-mvc-rest-service-junit-mockito/
+ . http://memorynotfound.com/spring-mvc-restful-web-service-crud-example/
+
+=== Business logic
+ . http://www.vavr.io/vavr-docs/
+ . http://www.baeldung.com/javaslang-try
