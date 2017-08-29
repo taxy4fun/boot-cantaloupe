@@ -457,3 +457,7 @@ Aqui se pueden ver las pantallas https://backoffice-4yf-develop.herokuapp.com/
  . http://blog.vavr.io/redundancy-of-the-java-language/
  . http://blog.vavr.io/pattern-matching-starter/
  . http://www.baeldung.com/javaslang-try
+ 
+=== Data Access
+ . https://docs.spring.io/spring-data/jpa/docs/1.11.6.RELEASE/reference/html/
+ . https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html
