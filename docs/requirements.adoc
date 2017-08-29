@@ -453,4 +453,7 @@ Aqui se pueden ver las pantallas https://backoffice-4yf-develop.herokuapp.com/
 
 === Business logic
  . http://www.vavr.io/vavr-docs/
+ . http://blog.vavr.io/idiomatic-javaslang-the-for-comprehension/
+ . http://blog.vavr.io/redundancy-of-the-java-language/
+ . http://blog.vavr.io/pattern-matching-starter/
  . http://www.baeldung.com/javaslang-try
