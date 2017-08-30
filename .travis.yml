@@ -11,6 +11,9 @@ deploy:
   on:
     repo: taxy4fun/boot-cantaloupe
 notifications:
+  slack:
+    rooms:
+      - springuers:87OpNvMaXntND57GTmC0htJr#travis
   email:
     recipients:
     - manuelf.mola@gmail.com
