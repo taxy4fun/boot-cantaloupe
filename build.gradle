@@ -1,6 +1,6 @@
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
     apply plugin: 'jacoco'
@@ -11,8 +11,8 @@ allprojects {
             downloadJavadoc = true
         }
     }
-    
-    ext { springBootVersion = '1.5.6.RELEASE' }
+
+    ext { springBootVersion = '1.5.4.RELEASE' }
 
 }
 
