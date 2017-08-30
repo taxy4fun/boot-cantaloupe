@@ -72,13 +72,13 @@ $ touch src/main/java/com/myproject/App.java <4>
 .build.gradle
 ----
 plugins {
-    id 'org.springframework.boot' version '1.5.3.RELEASE'
+    id 'org.springframework.boot' version '1.5.6.RELEASE'
     id 'java'
 }
 
 jar {
     baseName = 'myproject'
-    version =  '0.0.1-SNAPSHOT'
+    version =  '1.0.0-SNAPSHOT'
 }
 
 repositories {
