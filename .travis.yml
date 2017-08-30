@@ -1,15 +1,11 @@
 language: java
+
 jdk:
 - oraclejdk8
+
 script:
-- "./gradlew build"
-deploy:
-  provider: heroku
-  api_key:
-    secure: tIk4GjaCBIjAXQjjDWnKhc//3/eo9UmxTleREKBAR9FrMCrcuM0NAWmLAJatZ68Te6APNfXHNieI1JR4qWYEdMhnWJixaEJ86ZrGYPGHZaqCsosys8ou6CRTbbfJrV7reaZI/xM4rg9A9PJvzpQnRAvhb24hkJGDYIoDlf3O/zEO8yZWEnKtyLiiWFWhtRrrJAO1ANXwISgvOiQ0HsBMBejKXxAo8V2umuJ/DcwpVb2U2RK01YS9PXbbN9s9h4mamuPkd/1U5E6RNlSttKmwfeLINTwn8Xiztjzau8kaOX5iLr6vVGApEQgOYkhfkDCPVkw3+nnfEPJ+U8D4QwxRAqqRdBm8zQTm0tUFATNjQM137ryEvZruSiAqOBpHVVhGhqgKYkvf4ZnpFwhikMpcBaOmZSG50IbsP47gxAmIxVBjfrqkGeJK8nVzB0Aiqtjs55PUznpKKhyZ4bjbOH4WgZN02mpckQnkYDul8XL9aNxB9PeIOts8qKwnim7i62OXR0sKAgImmFxLFcSeOLfcymIBNYzMWpk8PxPq7k9EfJCiZCZT3L/1vh2iCo5OdSyfTCo8kaEA53YYmPoOc4Y0kSJwmBvT9K2PDy4YtFy4Y9DL3FVBWfg6wMXdeFMBNAYjiJmksrMsUoUWwvcae4QJ6SKua36FhJWmsg3ltZwht1s=
-  app: boot-cantaloupe
-  on:
-    repo: taxy4fun/boot-cantaloupe
+- ./gradlew build
+
 notifications:
   slack:
     rooms:
