@@ -1,4 +1,4 @@
-package com.example;
+package com.springuers.taxy4fun.configuration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @Component
 @ConfigurationProperties(prefix="foo")
-public class FooProperties {
+public class AppProperties {
 
     private boolean enabled;
 
@@ -40,7 +40,7 @@ public class FooProperties {
 
     @java.lang.Override
     public java.lang.String toString() {
-        return "FooProperties{" +
+        return "AppProperties{" +
                 "enabled=" + enabled +
                 ", remoteAddress=" + remoteAddress +
                 ", security=" + security +

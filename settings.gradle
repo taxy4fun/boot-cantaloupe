@@ -1,1 +1,1 @@
-include 'hello-world', 'repository'
+include 'controller', 'repository'
