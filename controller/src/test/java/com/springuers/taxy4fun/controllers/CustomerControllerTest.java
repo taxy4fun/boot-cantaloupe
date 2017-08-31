@@ -1,10 +1,10 @@
 package com.springuers.taxy4fun.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.springuers.taxy4fun.dtos.Driver;
-import com.springuers.taxy4fun.dtos.DriverCreateRequest;
-import com.springuers.taxy4fun.interfaces.DriverService;
-import com.springuers.taxy4fun.mappers.DriverFacadeMapper;
+import com.springuers.taxy4fun.dtos.Customer;
+import com.springuers.taxy4fun.dtos.CustomerCreateRequest;
+import com.springuers.taxy4fun.interfaces.CustomerService;
+import com.springuers.taxy4fun.mappers.CustomerFacadeMapper;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,59 +23,40 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Created by gevaudan on 30/08/17.
  */
-
-/* @RunWith(SpringRunner.class)
-@SpringBootTest(classes=DriverControllerTest.class)
-@AutoConfigureMockMvc */
-
-/* @RunWith(SpringRunner.class)
-@AutoConfigureRestDocs("target/generated-snippets")
-@SpringBootTest(classes=DriverControllerTest.class) */
-
 @RunWith(MockitoJUnitRunner.class)
-public class DriverControllerTest {
-
-    /* @Rule
-    public JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation("target/generated-snippets"); */
-
-    /* @Autowired
-    private WebApplicationContext context; */
+public class CustomerControllerTest {
 
     private MockMvc mockMvc;
 
     private ObjectMapper jsonMapper;
 
     @Mock
-    private DriverService driverService;
+    private CustomerService customerService;
 
     @Mock
-    private DriverFacadeMapper driverFacadeMapper;
+    private CustomerFacadeMapper customerFacadeMapper;
 
-    private DriverController driverController;
+    private CustomerController customerController;
 
     @Before
     public void setUp() {
         jsonMapper = new ObjectMapper();
-        driverController = new DriverController(driverService, driverFacadeMapper);
-        this.mockMvc = MockMvcBuilders.standaloneSetup(driverController).build();
-
-        /* this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context)
-                .apply(documentationConfiguration(this.restDocumentation))
-                .build(); */
+        customerController = new CustomerController(customerService, customerFacadeMapper);
+        this.mockMvc = MockMvcBuilders.standaloneSetup(customerController).build();
     }
 
     @Test
     public void testCreateNew() throws Exception {
 
-        DriverCreateRequest createRequest = new DriverCreateRequest("admin");
-        Driver driver = new Driver("admin");
+        CustomerCreateRequest createRequest = new CustomerCreateRequest("admin");
+        Customer customer = new Customer("admin");
 
-        when(driverService.create(any(Driver.class)))
-                .thenReturn(driver);
+        when(customerService.create(any(Customer.class)))
+                .thenReturn(customer);
 
         String jsonCreateRequest = jsonMapper.writeValueAsString(createRequest);
 
-        this.mockMvc.perform(post("/v1/drivers")
+        this.mockMvc.perform(post("/v1/customers")
                 .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)
                 .content(jsonCreateRequest)
                 .accept(MediaType.APPLICATION_JSON))
@@ -86,14 +67,14 @@ public class DriverControllerTest {
     @Test
     public void testCreateExistent() throws Exception {
 
-        DriverCreateRequest createRequest = new DriverCreateRequest("admin");
+        CustomerCreateRequest createRequest = new CustomerCreateRequest("admin");
 
-        when(driverService.create(any(Driver.class)))
+        when(customerService.create(any(Customer.class)))
                 .thenReturn(null);
 
         String jsonCreateRequest = jsonMapper.writeValueAsString(createRequest);
 
-        this.mockMvc.perform(post("/v1/drivers")
+        this.mockMvc.perform(post("/v1/customers")
                 .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)
                 .content(jsonCreateRequest)
                 .accept(MediaType.APPLICATION_JSON))
