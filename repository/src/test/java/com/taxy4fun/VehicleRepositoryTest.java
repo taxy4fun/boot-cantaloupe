@@ -8,6 +8,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static com.taxy4fun.RepositoryTestUtils.BRAND_AUDI;
+import static com.taxy4fun.RepositoryTestUtils.PLATE_AUDI;
+import static com.taxy4fun.RepositoryTestUtils.newVehicle;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -18,8 +21,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 public class VehicleRepositoryTest {
 
-    public static final String BRAND_AUDI = "Audi";
-    public static final String PLATE_AUDI = "1234ABC";
     @Autowired
     private VehicleRepository repository;
 
@@ -31,25 +32,18 @@ public class VehicleRepositoryTest {
     @Test
     public void create() {
 
-        Vehicle vehicle = new Vehicle();
-        vehicle.setPlate(PLATE_AUDI);
-        vehicle.setBrand(BRAND_AUDI);
-        vehicle.setDescription("A4 Black");
-
         /*
             Verificamos que todavia ¡NO!
             hemos persistido la entidad
          */
+        Vehicle vehicle = newVehicle();
         assertThat(vehicle.getId()).isNull();
 
         /*
-            Probamos el repository
+            Probamos el repository y
+            verificamos que ha persistido
          */
         Vehicle entity = this.repository.save(vehicle);
-
-        /*
-            Verificamos que ha persistido
-         */
         assertThat(entity.getId()).isNotNull();
         assertThat(entity.getBrand()).isEqualTo(BRAND_AUDI);
         assertThat(entity.getPlate()).isEqualTo(PLATE_AUDI);
@@ -57,27 +51,35 @@ public class VehicleRepositoryTest {
     }
 
     @Test
-    public void find() {
+    public void delete() {
+        final Vehicle vehicle = newVehicle();
+        assertThat(vehicle.getId()).isNull();
 
-        Vehicle vehicle = new Vehicle();
-        vehicle.setPlate(PLATE_AUDI);
-        vehicle.setBrand(BRAND_AUDI);
-        vehicle.setDescription("A4 Black");
+        final Vehicle vehicleSave = this.repository.save(vehicle);
+        assertThat(vehicleSave.getId()).isNotNull();
+        final Long id = vehicleSave.getId();
+
+        this.repository.delete(id);
+        assertThat(this.repository.findOne(id)).isNull();
+
+    }
+
+
+    @Test
+    public void findByPlate() {
 
         /*
             Verificamos que todavia ¡NO!
             hemos persistido la entidad
          */
+        Vehicle vehicle = newVehicle();
         assertThat(vehicle.getId()).isNull();
 
         /*
-            Probamos el repository
+            Probamos el repository y
+            verificamos que ha persistido
          */
         Vehicle entity = this.repository.save(vehicle);
-
-        /*
-            Verificamos que ha persistido
-         */
         assertThat(entity.getId()).isNotNull();
 
         /*
@@ -85,8 +87,22 @@ public class VehicleRepositoryTest {
             de sus atributos
          */
         Vehicle entityFound = this.repository.findByPlate(PLATE_AUDI);
-        assertThat(entity).isNotNull();
-        assertThat(entity.getPlate()).isEqualTo(PLATE_AUDI);
+        assertThat(entityFound).isNotNull();
+        assertThat(entityFound.getPlate()).isEqualTo(PLATE_AUDI);
+    }
+
+    @Test
+    public void findByBrand() {
+
+        final Vehicle vehicle = newVehicle();
+        assertThat(vehicle.getId()).isNull();
+
+        final Vehicle vehicleSave = this.repository.save(vehicle);
+        assertThat(vehicleSave.getId()).isNotNull();
+
+        final Vehicle vehicleFound = this.repository.findByBrand(BRAND_AUDI);
+        assertThat(vehicleFound).isNotNull();
+        assertThat(vehicleFound.getBrand()).isEqualTo(BRAND_AUDI);
     }
 
 }

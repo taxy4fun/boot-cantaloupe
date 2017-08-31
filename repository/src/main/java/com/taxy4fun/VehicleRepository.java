@@ -8,5 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface VehicleRepository extends CrudRepository<Vehicle, Long> {
 
 
-    Vehicle findByPlate(String plate);
+    Vehicle findByPlate(final String plate);
+
+    Vehicle findByBrand(final String brand);
 }
