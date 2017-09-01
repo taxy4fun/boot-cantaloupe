@@ -5,13 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * Created by mvillafuertem on 9/1/17.
+ * Created by mvillafuertem on 01/09/2017.
  */
 @Entity
-public class Driver extends Person {
+public class Customer extends Person {
 
     @Id
     @GeneratedValue
     private Long id;
-
 }

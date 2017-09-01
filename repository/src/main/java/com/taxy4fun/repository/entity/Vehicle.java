@@ -1,9 +1,6 @@
 package com.taxy4fun.repository.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  * Created by mvillafuertem on 8/29/17.
@@ -18,7 +15,7 @@ public class Vehicle {
     private String description;
     private String photo;
     private String plate;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Driver driver;
 
     public Long getId() {
