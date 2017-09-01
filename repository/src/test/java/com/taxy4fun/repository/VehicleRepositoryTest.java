@@ -1,25 +1,26 @@
-package com.taxy4fun;
+package com.taxy4fun.repository;
 
-import com.taxy4fun.entity.Vehicle;
-import com.taxy4fun.repository.VehicleRepository;
+import com.taxy4fun.repository.entity.Vehicle;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static com.taxy4fun.RepositoryTestUtils.BRAND_AUDI;
-import static com.taxy4fun.RepositoryTestUtils.PLATE_AUDI;
-import static com.taxy4fun.RepositoryTestUtils.newVehicle;
+import static com.taxy4fun.repository.RepositoryTestUtils.BRAND_AUDI;
+import static com.taxy4fun.repository.RepositoryTestUtils.PLATE_AUDI;
+import static com.taxy4fun.repository.RepositoryTestUtils.newVehicle;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by mvillafuertem on 8/29/17.
  */
 @SpringBootTest(classes = VehicleRepositoryTest.class)
-@DataJpaTest
+@DataJpaTest(showSql = true)
+@ContextConfiguration
 @RunWith(SpringRunner.class)
 public class VehicleRepositoryTest {
 

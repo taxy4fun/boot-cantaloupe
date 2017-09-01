@@ -1,17 +1,17 @@
-entity Vehicle {
+com.taxy4fun.repository.entity Vehicle {
 	plate String required minlength(3),
     brand String required minlength(3),
 	description String required minlength(3),
 }
 
-entity User {
+com.taxy4fun.repository.entity User {
 	username String required minlength(3),
     password String required minlength(6),
     registerDate LocalDate required,
     retry Integer required
 }
 
-entity Person {
+com.taxy4fun.repository.entity Person {
 	name String required minlength(3),
     surname String required minlength(3),
 	email String required minlength(3),
@@ -21,29 +21,29 @@ entity Person {
     city String required minlength(3)
 }
 
-entity Driver {
+com.taxy4fun.repository.entity Driver {
 	available Boolean required
 }
 
-entity Customer {
+com.taxy4fun.repository.entity Customer {
 
 }
 
-entity Journey {
+com.taxy4fun.repository.entity Journey {
 	alias String,
     requestAccepted Boolean
 }
 
-entity Point {
+com.taxy4fun.repository.entity Point {
 	latitude Long required,
     longitude Long required
 }
 
-entity Route {
+com.taxy4fun.repository.entity Route {
 
 }
 
-entity Footprint {
+com.taxy4fun.repository.entity Footprint {
 	datetime LocalDate required
 }
 

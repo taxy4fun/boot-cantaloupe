@@ -1,6 +1,6 @@
 package com.taxy4fun.repository;
 
-import com.taxy4fun.entity.Person;
+import com.taxy4fun.repository.entity.Person;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

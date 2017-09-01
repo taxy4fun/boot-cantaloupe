@@ -1,4 +1,4 @@
-package com.taxy4fun.entity;
+package com.taxy4fun.repository.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

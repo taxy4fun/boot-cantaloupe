@@ -1,6 +1,6 @@
 package com.taxy4fun.repository;
 
-import com.taxy4fun.entity.Driver;
+import com.taxy4fun.repository.entity.Driver;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

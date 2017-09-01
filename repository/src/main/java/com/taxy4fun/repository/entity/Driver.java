@@ -1,9 +1,8 @@
-package com.taxy4fun.entity;
+package com.taxy4fun.repository.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 /**
  * Created by mvillafuertem on 9/1/17.

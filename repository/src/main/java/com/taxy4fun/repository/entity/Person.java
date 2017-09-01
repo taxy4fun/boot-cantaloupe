@@ -1,4 +1,4 @@
-package com.taxy4fun.entity;
+package com.taxy4fun.repository.entity;
 
 import org.apache.commons.lang3.builder.ToStringStyle;
 
