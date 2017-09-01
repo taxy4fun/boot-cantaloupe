@@ -1,9 +1,11 @@
 package com.taxy4fun;
 
+import com.taxy4fun.entity.Vehicle;
+
 /**
  * Created by mvillafuertem on 31/08/2017.
  */
-final class RepositoryTestUtils {
+public final class RepositoryTestUtils {
 
     static final String BRAND_AUDI = "Audi";
     static final String PLATE_AUDI = "1234ABC";

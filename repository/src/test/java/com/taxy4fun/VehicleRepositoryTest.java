@@ -1,5 +1,7 @@
 package com.taxy4fun;
 
+import com.taxy4fun.entity.Vehicle;
+import com.taxy4fun.repository.VehicleRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,11 +49,11 @@ public class VehicleRepositoryTest {
         assertThat(entity.getId()).isNotNull();
         assertThat(entity.getBrand()).isEqualTo(BRAND_AUDI);
         assertThat(entity.getPlate()).isEqualTo(PLATE_AUDI);
-
     }
 
     @Test
     public void delete() {
+
         final Vehicle vehicle = newVehicle();
         assertThat(vehicle.getId()).isNull();
 
@@ -61,7 +63,6 @@ public class VehicleRepositoryTest {
 
         this.repository.delete(id);
         assertThat(this.repository.findOne(id)).isNull();
-
     }
 
 

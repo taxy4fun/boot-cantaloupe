@@ -1,4 +1,4 @@
-package com.taxy4fun;
+package com.taxy4fun.entity;
 
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -10,11 +10,13 @@ import javax.persistence.Id;
  * Created by cmartin on 23/06/2017.
  */
 @Entity
-public class User {
+public class Person {
 
     @Id
     @GeneratedValue
     private Long id;
+
+    private Long ic;
 
     private String firstname;
 
@@ -62,6 +64,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getIc() {
+        return ic;
+    }
+
+    public void setIc(final Long ic) {
+        this.ic = ic;
     }
 
     @Override

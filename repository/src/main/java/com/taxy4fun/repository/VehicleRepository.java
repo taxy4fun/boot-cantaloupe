@@ -1,5 +1,6 @@
-package com.taxy4fun;
+package com.taxy4fun.repository;
 
+import com.taxy4fun.entity.Vehicle;
 import org.springframework.data.repository.CrudRepository;
 
 /**

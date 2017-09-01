@@ -1,8 +1,9 @@
-package com.taxy4fun;
+package com.taxy4fun.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * Created by mvillafuertem on 8/29/17.
@@ -17,6 +18,8 @@ public class Vehicle {
     private String description;
     private String photo;
     private String plate;
+    @ManyToOne
+    private Driver driver;
 
     public Long getId() {
         return id;
@@ -56,5 +59,13 @@ public class Vehicle {
 
     public void setPlate(final String plate) {
         this.plate = plate;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(final Driver driver) {
+        this.driver = driver;
     }
 }
