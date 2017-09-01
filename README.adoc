@@ -8,8 +8,6 @@ Madrid
 
 image:https://travis-ci.org/taxy4fun/boot-cantaloupe.svg?branch=master[] -> link:https://travis-ci.org/taxy4fun/boot-cantaloupe[master]
 
-image:https://travis-ci.org/butcherless/boot-cantaloupe.svg?branch=pruebas-manu[] -> link:https://travis-ci.org/butcherless/boot-cantaloupe[pruebas-manu]
-
 
 NOTE: testing and tasting the Boot fruit. Java-8, forgive us!!!
 
