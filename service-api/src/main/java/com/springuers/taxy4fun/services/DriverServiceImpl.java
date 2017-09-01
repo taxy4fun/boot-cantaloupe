@@ -9,7 +9,7 @@ import com.springuers.taxy4fun.interfaces.DriverService;
 public class DriverServiceImpl implements DriverService {
 
     @Override
-    public Driver create(Driver driver) {
+    public Driver create(Driver driver) throws RuntimeException {
         return null;
     }
 

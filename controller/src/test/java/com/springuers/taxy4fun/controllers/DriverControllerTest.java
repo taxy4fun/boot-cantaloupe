@@ -6,16 +6,23 @@ import com.springuers.taxy4fun.dtos.DriverCreateRequest;
 import com.springuers.taxy4fun.interfaces.DriverService;
 import com.springuers.taxy4fun.mappers.DriverFacadeMapper;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.http.MediaType;
+import org.springframework.restdocs.JUnitRestDocumentation;
+import org.springframework.restdocs.request.RequestDocumentation;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
+import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
+import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
+import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
+import static org.springframework.restdocs.request.RequestDocumentation.requestParameters;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -35,8 +42,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(MockitoJUnitRunner.class)
 public class DriverControllerTest {
 
-    /* @Rule
-    public JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation("target/generated-snippets"); */
+    @Rule
+    public JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation("target/generated-snippets");
 
     /* @Autowired
     private WebApplicationContext context; */
@@ -57,7 +64,8 @@ public class DriverControllerTest {
     public void setUp() {
         jsonMapper = new ObjectMapper();
         driverController = new DriverController(driverService, driverFacadeMapper);
-        this.mockMvc = MockMvcBuilders.standaloneSetup(driverController).build();
+        this.mockMvc = MockMvcBuilders.standaloneSetup(driverController)
+                .apply(documentationConfiguration(this.restDocumentation)).build();
 
         /* this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context)
                 .apply(documentationConfiguration(this.restDocumentation))
@@ -76,11 +84,14 @@ public class DriverControllerTest {
         String jsonCreateRequest = jsonMapper.writeValueAsString(createRequest);
 
         this.mockMvc.perform(post("/v1/drivers")
+                // Unit Test
                 .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)
                 .content(jsonCreateRequest)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated())
-                .andDo(print());
+                .andDo(print())
+                // Rest Docs
+                .andDo(document("driver-doc", requestParameters(parameterWithName("id").description("Identificador de conductor"))));
     }
 
     @Test
@@ -89,7 +100,7 @@ public class DriverControllerTest {
         DriverCreateRequest createRequest = new DriverCreateRequest("admin");
 
         when(driverService.create(any(Driver.class)))
-                .thenReturn(null);
+                .thenThrow(RuntimeException.class);
 
         String jsonCreateRequest = jsonMapper.writeValueAsString(createRequest);
 

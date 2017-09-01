@@ -7,6 +7,6 @@ import com.springuers.taxy4fun.dtos.Driver;
  */
 public interface DriverService {
 
-    Driver create(Driver driver);
+    Driver create(Driver driver) throws RuntimeException;
 
 }

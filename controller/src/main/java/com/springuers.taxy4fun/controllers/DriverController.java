@@ -31,8 +31,14 @@ public class DriverController {
     @PostMapping("/v1/drivers")
     ResponseEntity<HttpStatus> create(@RequestBody DriverCreateRequest driverCreateRequest) {
 
-        Driver serviceResponse = driverService.create(driverFacadeMapper.createRequestToDriver(driverCreateRequest));
-        HttpStatus statusResponse = serviceResponse!=null?HttpStatus.CREATED:HttpStatus.CONFLICT;
+        Driver serviceResponse;
+        HttpStatus statusResponse;
+        try {
+            serviceResponse = driverService.create(driverFacadeMapper.createRequestToDriver(driverCreateRequest));
+            statusResponse = HttpStatus.CREATED;
+        } catch(RuntimeException e) {
+            statusResponse = HttpStatus.CONFLICT;
+        }
 
         return ResponseEntity.status(statusResponse).build();
     }
