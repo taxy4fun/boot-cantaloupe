@@ -8,6 +8,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static com.taxy4fun.repository.RepositoryTestUtils.PERSON;
+import static com.taxy4fun.repository.RepositoryTestUtils.newPerson;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -18,16 +20,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 public class PersonRepositoryTest {
 
-    public static final String PECADOR = "Pecador";
-
     @Autowired
     private PersonRepository personRepository;
 
     @Test
     public void testCreate() {
-        Person personBean = new Person();
-        personBean.setFirstname("Chiquito");
-        personBean.setLastname(PECADOR);
+        Person personBean = newPerson();
+
         assertThat(personBean.getId()).isNull();
         // bean persistence
         this.personRepository.save(personBean);
@@ -36,9 +35,9 @@ public class PersonRepositoryTest {
         assertThat(personBean.getId()).isNotNull();
 
         // entity search
-        Person personEntity = this.personRepository.findByLastname(PECADOR);
+        Person personEntity = this.personRepository.findByLastname(PERSON);
         assertThat(personEntity).isNotNull();
-        assertThat(personEntity.getLastname()).isEqualTo(PECADOR);
+        assertThat(personEntity.getLastname()).isEqualTo(PERSON);
     }
 
 }

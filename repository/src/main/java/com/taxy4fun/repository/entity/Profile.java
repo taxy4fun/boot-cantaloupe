@@ -3,18 +3,18 @@ package com.taxy4fun.repository.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 /**
- * Created by mvillafuertem on 01/09/2017.
+ * Created by mvillafuertem on 02/09/2017.
  */
 @Entity
-public class Customer extends Person {
+public class Profile {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    @ManyToOne
-    private Payment payment;
+    private String email;
+    private String password;
+    private Integer rank;
 }
