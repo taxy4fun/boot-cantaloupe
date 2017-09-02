@@ -41,13 +41,16 @@ NOTE: testing and tasting the Boot fruit. Java-8, forgive us!!!
  sudo ln -sf /usr/local/share/apache-maven-3.5.0/bin/mvn /usr/local/bin/mvn
  mvn -v
 
-
 . Ascii Art Generator
 
  http://patorjk.com/software/taag/
 
-== Proyecto básico
+== Conventions, Rules, Duties
+.Git commit message conventions
 
+ . http://karma-runner.github.io/1.0/dev/git-commit-msg.html
+
+== Proyecto básico
 
 <1> Crear una carpeta con el nombre del proyecto y acceder.
 <2> Crear el fichero `build.gradle` con las configuraciones necesarias
