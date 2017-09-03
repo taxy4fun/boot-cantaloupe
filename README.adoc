@@ -132,3 +132,18 @@ $ gradle boRu <2>
 YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.myproject.App : Hola Mundo!
 YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.myproject.App : Started App in 10.975 seconds (JVM running for 11.303)
 ----
+
+== Comandos habituales
+
+=== gradle
+Mostrar las dependencias de un subproyecto.
+
+ ./gradlew repository:dependencies --configuration compile
+
+Escribir las trazas de ejecución con nivel `debug` a un archivo para su posterior análisis.
+
+ ./gradlew test --debug > /tmp/gradle.log
+
+Lanzar un test determinado en un subproyecto.
+
+ ./gradlew repository:test -Dtest.single=PersonRepositoryTest
