@@ -3,7 +3,7 @@ package com.taxy4fun.repository.entity;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * Created by cmartin on 23/06/2017.
@@ -14,7 +14,7 @@ public class Person {
     @Id
     @GeneratedValue
     private Long id;
-    private Date birthdate;
+    private LocalDate birthdate;
     /*
         national identity card
      */
@@ -35,11 +35,11 @@ public class Person {
         this.id = id;
     }
 
-    public Date getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 

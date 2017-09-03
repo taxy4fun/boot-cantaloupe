@@ -3,6 +3,7 @@ package com.taxy4fun.repository.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -15,5 +16,5 @@ public class Track {
     @GeneratedValue
     private Long id;
 
-    private Date datetime;
+    private LocalDateTime datetime;
 }

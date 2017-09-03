@@ -5,6 +5,7 @@ import com.taxy4fun.repository.entity.Person;
 import com.taxy4fun.repository.entity.Profile;
 import com.taxy4fun.repository.entity.Vehicle;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -24,7 +25,7 @@ final class RepositoryTestUtils {
         person.setIc(1234567890L);
         person.setFirstname(PERSON);
         person.setLastname(PERSON);
-        person.setBirthdate(new Date());
+        person.setBirthdate(LocalDate.of(1900,10,30));
         person.setPhone(1234567890);
 
         person.setAddress("Calle de Madrid");
@@ -49,7 +50,7 @@ final class RepositoryTestUtils {
         driver.setIc(1234567890L);
         driver.setFirstname(DRIVER_NAME);
         driver.setLastname(DRIVER_LASTNAME);
-        driver.setBirthdate(new Date());
+        driver.setBirthdate(LocalDate.of(1900,10,30));
 
         driver.setProfile(newProfile());
         return driver;
