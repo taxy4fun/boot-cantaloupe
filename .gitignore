@@ -11,6 +11,9 @@ target/
 # eclipse and fellows
 .project
 .classpath
+
+# gradle
+out/
 .settings
 .gradle/
 build/
