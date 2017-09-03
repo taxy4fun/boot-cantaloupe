@@ -18,6 +18,8 @@ dependencies {
     testCompile "com.h2database:h2:1.4.+"
 }
 
+
+
 dependencyManagement {
     imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
 }
