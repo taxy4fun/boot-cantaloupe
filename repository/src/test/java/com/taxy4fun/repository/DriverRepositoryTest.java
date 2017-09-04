@@ -4,10 +4,13 @@ import com.taxy4fun.repository.entity.Driver;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import static com.taxy4fun.repository.RepositoryTestUtils.newDriver;
 
 /**
  * Created by mvillafuertem on 9/1/17.
@@ -15,15 +18,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(classes = DriverRepositoryTest.class)
 @DataJpaTest
 @RunWith(SpringRunner.class)
-@Import(Driver.class)
 public class DriverRepositoryTest {
+
+    @Autowired
+    private DriverRepository repository;
+
     @Before
     public void setUp() throws Exception {
     }
 
     @Test
     public void test() {
-
     }
 
 }

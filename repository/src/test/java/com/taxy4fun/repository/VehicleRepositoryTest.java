@@ -1,5 +1,6 @@
 package com.taxy4fun.repository;
 
+import com.taxy4fun.repository.entity.Driver;
 import com.taxy4fun.repository.entity.Vehicle;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Created by mvillafuertem on 8/29/17.
  */
 @SpringBootTest(classes = VehicleRepositoryTest.class)
-@DataJpaTest(showSql = true)
+@DataJpaTest
 @RunWith(SpringRunner.class)
 public class VehicleRepositoryTest {
 
@@ -66,13 +67,15 @@ public class VehicleRepositoryTest {
         assertThat(vehicle.getId()).isNull();
 
         final Vehicle vehicleSave = this.repository.save(vehicle);
+        final Long initialCount = this.repository.count();
         assertThat(vehicleSave.getId()).isNotNull();
         final Long id = vehicleSave.getId();
 
         this.repository.delete(id);
-        assertThat(this.repository.findOne(id)).isNull();
-    }
 
+        assertThat(this.repository.findOne(id)).isNull();
+        assertThat(1L).isEqualTo(initialCount - this.repository.count());
+    }
 
     @Test
     public void findByPlate() {
@@ -126,5 +129,4 @@ public class VehicleRepositoryTest {
         assertThat(first.isPresent());
         assertThat(first.get().getDriver().getEin()).isEqualTo(driverEin);
     }
-
 }

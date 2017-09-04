@@ -17,4 +17,36 @@ public class Profile {
     private String email;
     private String password;
     private Integer rank;
+
+    public Long getId() {
+        return id;
+    }
+
+    private void setId(final Long id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(final String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(final String password) {
+        this.password = password;
+    }
+
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(final Integer rank) {
+        this.rank = rank;
+    }
 }

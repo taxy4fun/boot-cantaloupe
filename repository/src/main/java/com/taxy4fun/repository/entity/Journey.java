@@ -20,4 +20,44 @@ public class Journey {
     private Customer customer;
     @ManyToOne
     private Vehicle vehicle;
+
+    public Long getId() {
+        return id;
+    }
+
+    private void setId(final Long id) {
+        this.id = id;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(final String origin) {
+        this.origin = origin;
+    }
+
+    public String getDestiny() {
+        return destiny;
+    }
+
+    public void setDestiny(final String destiny) {
+        this.destiny = destiny;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(final Customer customer) {
+        this.customer = customer;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(final Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
 }

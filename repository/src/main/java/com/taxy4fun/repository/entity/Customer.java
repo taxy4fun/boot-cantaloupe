@@ -17,4 +17,21 @@ public class Customer extends Person {
 
     @ManyToOne
     private Payment payment;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    private void setId(final Long id) {
+        this.id = id;
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(final Payment payment) {
+        this.payment = payment;
+    }
 }

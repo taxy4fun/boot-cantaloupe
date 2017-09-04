@@ -13,4 +13,12 @@ public class Route {
     @Id
     @GeneratedValue
     private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    private void setId(final Long id) {
+        this.id = id;
+    }
 }
