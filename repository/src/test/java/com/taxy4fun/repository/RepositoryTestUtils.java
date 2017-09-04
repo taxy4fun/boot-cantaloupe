@@ -52,6 +52,7 @@ final class RepositoryTestUtils {
         driver.setLastname(DRIVER_LASTNAME);
         driver.setBirthdate(LocalDate.of(1900,10,30));
 
+        driver.setEin(123456789L);
         driver.setProfile(newProfile());
         return driver;
     }

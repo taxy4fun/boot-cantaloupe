@@ -10,6 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Optional;
+import java.util.stream.Stream;
+
 import static com.taxy4fun.repository.RepositoryTestUtils.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -109,6 +112,19 @@ public class VehicleRepositoryTest {
         Vehicle vehicleFound = this.repository.findByBrand(BRAND_AUDI);
         assertThat(vehicleFound).isNotNull();
         assertThat(vehicleFound.getBrand()).isEqualTo(BRAND_AUDI);
+    }
+
+    @Test
+    public void findByDriverEin() {
+
+        final Vehicle vehicleSaved = this.repository.save(newVehicle());
+
+        final Long driverEin = vehicleSaved.getDriver().getEin();
+        assertThat(driverEin).isNotNull();
+        final Stream<Vehicle> vehicleFound = this.repository.findByDriverEin(driverEin);
+        final Optional<Vehicle> first = vehicleFound.findFirst();
+        assertThat(first.isPresent());
+        assertThat(first.get().getDriver().getEin()).isEqualTo(driverEin);
     }
 
 }
