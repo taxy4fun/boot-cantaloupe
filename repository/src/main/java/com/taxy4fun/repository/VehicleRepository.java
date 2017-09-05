@@ -16,4 +16,6 @@ public interface VehicleRepository extends CrudRepository<Vehicle, Long> {
     Vehicle findByBrand(final String brand);
 
     Stream<Vehicle> findByDriverEin(final Long ein);
+
+//    Stream<Route> findRoutesByVehiclePlate(String plate);
 }

@@ -17,6 +17,8 @@ public class Vehicle {
     private String plate;
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Driver driver;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Route route;
 
     public Long getId() {
         return id;
@@ -64,5 +66,13 @@ public class Vehicle {
 
     public void setDriver(final Driver driver) {
         this.driver = driver;
+    }
+
+    public Route getRoute() {
+        return route;
+    }
+
+    public void setRoute(final Route route) {
+        this.route = route;
     }
 }

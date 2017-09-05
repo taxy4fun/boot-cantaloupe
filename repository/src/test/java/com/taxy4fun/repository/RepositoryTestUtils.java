@@ -1,12 +1,15 @@
 package com.taxy4fun.repository;
 
-import com.taxy4fun.repository.entity.Driver;
-import com.taxy4fun.repository.entity.Person;
-import com.taxy4fun.repository.entity.Profile;
-import com.taxy4fun.repository.entity.Vehicle;
+import com.taxy4fun.repository.entity.*;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
 
 /**
  * Created by mvillafuertem on 31/08/2017.
@@ -41,8 +44,38 @@ final class RepositoryTestUtils {
         vehicle.setBrand(BRAND_AUDI);
         vehicle.setDescription("A4 Black");
         vehicle.setDriver(newDriver());
+        vehicle.setRoute(newRoute());
         return vehicle;
     }
+
+    static Route newRoute() {
+        final Route route = new Route();
+        route.setPoints(newPoints());
+        return route;
+    }
+
+    static List<Point> newPoints() {
+        final List<Point> points = new ArrayList<>();
+        Point point = new Point(1L, 2L);
+        point.setDatetime(newLocalDateTime());
+        points.add(point);
+        return points;
+    }
+
+    static LocalDateTime newLocalDateTime() {
+        return LocalDateTime.of(newDate(), newTime());
+    }
+
+    private static LocalTime newTime() {
+        final LocalTime time = LocalTime.of(14,30,25);
+        return time;
+    }
+
+    private static LocalDate newDate() {
+        final LocalDate date = LocalDate.of(2017,8,21);
+        return date;
+    }
+
 
     static Driver newDriver() {
 
@@ -56,6 +89,7 @@ final class RepositoryTestUtils {
         driver.setProfile(newProfile());
         return driver;
     }
+
 
     static Profile newProfile() {
 

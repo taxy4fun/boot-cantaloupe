@@ -1,6 +1,6 @@
 package com.taxy4fun.repository;
 
-import com.taxy4fun.repository.entity.Driver;
+import com.taxy4fun.repository.entity.Route;
 import com.taxy4fun.repository.entity.Vehicle;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,9 +8,11 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Optional;
 import java.util.stream.Stream;
 

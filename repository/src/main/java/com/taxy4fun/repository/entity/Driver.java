@@ -1,7 +1,5 @@
 package com.taxy4fun.repository.entity;
 
-import sun.awt.SunHints;
-
 import javax.persistence.*;
 
 /**
@@ -14,13 +12,13 @@ public class Driver extends Person {
     @GeneratedValue
     private Long id;
 
-    /*
-        Employer Identification Number (EIN)
+    /**
+     * Employer Identification Number (EIN)
      */
     private Long ein;
 
-    /*
-        Driver License
+    /**
+     * Driver License
      */
     private Long license;
 

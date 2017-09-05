@@ -1,27 +1,25 @@
 package com.taxy4fun.repository.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+import javax.persistence.Embeddable;
 
 /**
  * Created by mvillafuertem on 02/09/2017.
  */
-@Entity
-public class Point {
+@Embeddable
+public class Point extends Track {
 
-    @Id
-    @GeneratedValue
-    private Long id;
     private Long latitude;
     private Long longitude;
 
-    public Long getId() {
-        return id;
+    public Point() {
     }
 
-    private void setId(final Long id) {
-        this.id = id;
+    public Point(final Long latitude, final Long longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public Long getLatitude() {
@@ -38,5 +36,13 @@ public class Point {
 
     public void setLongitude(final Long longitude) {
         this.longitude = longitude;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+                .append("latitude", latitude)
+                .append("longitude", longitude).append("date", getDatetime())
+                .toString();
     }
 }
