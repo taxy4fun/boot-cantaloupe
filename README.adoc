@@ -11,6 +11,15 @@ image:https://travis-ci.org/taxy4fun/boot-cantaloupe.svg?branch=master[] -> link
 
 NOTE: testing and tasting the Boot fruit. Java-8, forgive us!!!
 
+== Front Layer (our dear brother)
+
+ - https://backoffice-4yf-develop.herokuapp.com/
+
+== Conventions, Rules, Duties
+.Git commit message conventions
+
+ - http://karma-runner.github.io/1.0/dev/git-commit-msg.html
+ 
 == JDK & friends download and installation
 
 . Java SE Development Kit 8
@@ -45,12 +54,8 @@ NOTE: testing and tasting the Boot fruit. Java-8, forgive us!!!
 
  http://patorjk.com/software/taag/
 
-== Conventions, Rules, Duties
-.Git commit message conventions
 
- . http://karma-runner.github.io/1.0/dev/git-commit-msg.html
-
-== Proyecto básico
+== Basic Dummy Project
 
 <1> Crear una carpeta con el nombre del proyecto y acceder.
 <2> Crear el fichero `build.gradle` con las configuraciones necesarias
@@ -133,7 +138,7 @@ YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.myproject.App : Hola Mundo!
 YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.myproject.App : Started App in 10.975 seconds (JVM running for 11.303)
 ----
 
-== Comandos habituales
+== Useful commands
 
 === gradle
 Mostrar las dependencias de un subproyecto.
