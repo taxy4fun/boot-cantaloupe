@@ -3,11 +3,7 @@ package com.taxy4fun.repository.entity;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  * Created by mvillafuertem on 8/29/17.
@@ -26,8 +22,6 @@ public class Vehicle {
     // Associations
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Driver driver;
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    private Route route;
 
     public Long getId() {
         return id;
@@ -77,14 +71,6 @@ public class Vehicle {
         this.driver = driver;
     }
 
-    public Route getRoute() {
-        return route;
-    }
-
-    public void setRoute(final Route route) {
-        this.route = route;
-    }
-
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
@@ -94,7 +80,6 @@ public class Vehicle {
                 .append("photo", photo)
                 .append("plate", plate)
                 .append("driver", driver)
-                .append("route", route)
                 .toString();
     }
 }

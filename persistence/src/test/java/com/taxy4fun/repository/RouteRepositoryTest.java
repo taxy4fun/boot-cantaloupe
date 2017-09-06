@@ -76,12 +76,12 @@ public class RouteRepositoryTest {
     }
 
     private Route createRouteWithPoints() {
+
         final Route bean = newRoute();
         bean.setPoints(newPoints());
         final Route entity = this.repository.save(bean);
         assertThat(entity.getId()).isNotNull();
         assertThat(entity.getPoints()).isNotEmpty();
-
         return entity;
     }
 }

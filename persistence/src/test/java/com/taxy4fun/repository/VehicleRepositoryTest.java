@@ -78,10 +78,11 @@ public class VehicleRepositoryTest {
     @Test
     public void findByBrand() {
 
-        final Vehicle entity = this.createVehicle();
+        this.createVehicle();
 
         Vehicle vehicleFound = this.repository.findByBrand(BRAND_AUDI);
         assertThat(vehicleFound).isNotNull();
+        System.out.println(vehicleFound.toString());
         assertThat(vehicleFound.getBrand()).isEqualTo(BRAND_AUDI);
     }
 
@@ -95,6 +96,7 @@ public class VehicleRepositoryTest {
 
         final Stream<Vehicle> vehicleFound = this.repository.findByDriverEin(driverEin);
         final Optional<Vehicle> first = vehicleFound.findFirst();
+        System.out.println(first.toString());
         assertThat(first.isPresent());
         assertThat(first.get().getDriver().getEin()).isEqualTo(driverEin);
     }

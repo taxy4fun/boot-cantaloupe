@@ -3,10 +3,7 @@ package com.taxy4fun.repository.entity;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  * Created by mvillafuertem on 02/09/2017.
@@ -21,9 +18,9 @@ public class Journey {
     private String destiny;
 
     // Associations
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Customer customer;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Vehicle vehicle;
 
     public Long getId() {
@@ -65,6 +62,7 @@ public class Journey {
     public void setVehicle(final Vehicle vehicle) {
         this.vehicle = vehicle;
     }
+    
 
     @Override
     public String toString() {

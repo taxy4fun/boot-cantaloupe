@@ -3,10 +3,7 @@ package com.taxy4fun.repository.entity;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +19,9 @@ public class Route {
 
     @ElementCollection
     private List<Point> points = new ArrayList<>();
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Journey journey;
 
     public Long getId() {
         return id;

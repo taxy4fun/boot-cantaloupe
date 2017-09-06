@@ -1,11 +1,6 @@
 package com.taxy4fun.repository;
 
-import com.taxy4fun.repository.entity.Driver;
-import com.taxy4fun.repository.entity.Person;
-import com.taxy4fun.repository.entity.Point;
-import com.taxy4fun.repository.entity.Profile;
-import com.taxy4fun.repository.entity.Route;
-import com.taxy4fun.repository.entity.Vehicle;
+import com.taxy4fun.repository.entity.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -46,7 +41,6 @@ final class RepositoryTestUtils {
         vehicle.setBrand(BRAND_AUDI);
         vehicle.setDescription("A4 Black");
         vehicle.setDriver(newDriver());
-        vehicle.setRoute(newRouteWithPoints());
         return vehicle;
     }
 
@@ -116,5 +110,20 @@ final class RepositoryTestUtils {
 
         final Profile profile = new Profile();
         return profile;
+    }
+
+    static Journey newJourney() {
+        final Journey journey = new Journey();
+        journey.setCustomer(newCustomer());
+        journey.setVehicle(newVehicle());
+        return journey;
+    }
+
+    static Customer newCustomer() {
+        final Customer customer = new Customer();
+        customer.setIc(1234567890L);
+        customer.setFirstname("Cliente");
+        customer.setLastname("Bueno");
+        return customer;
     }
 }
