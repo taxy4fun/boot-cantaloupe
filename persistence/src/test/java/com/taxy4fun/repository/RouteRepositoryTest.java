@@ -36,6 +36,37 @@ public class RouteRepositoryTest {
     }
 
     @Test
+    public void delete() {
+        final Route entity = this.createRoute();
+        final Long previousCount = this.repository.count();
+
+        final Long entityId = entity.getId();
+        final Route routeFound = this.repository.findOne(entityId);
+        assertThat(routeFound).isNotNull();
+
+        this.repository.delete(routeFound);
+        final Long actualCount = this.repository.count();
+
+        assertThat(this.repository.findOne(entityId)).isNull();
+        assertThat(previousCount - actualCount).isEqualTo(1);
+    }
+
+    @Test
+    public void update() {
+        final Route entity = this.createRouteWithPoints();
+        final Integer previousCount = entity.getPoints().size();
+
+        entity.getPoints().remove(0);
+        final Long entityId = entity.getId();
+        this.repository.findOne(entityId);
+
+        final Route routeFound = this.repository.findOne(entityId);
+
+        final Integer actualCount = routeFound.getPoints().size();
+        assertThat(previousCount - actualCount).isEqualTo(1);
+    }
+
+    @Test
     public void createWithPoints() {
 
         final Route entity = this.createRouteWithPoints();
