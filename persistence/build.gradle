@@ -7,7 +7,7 @@ buildscript {
 plugins { id "io.spring.dependency-management" version "1.0.0.RELEASE" }
 
 jar {
-    baseName = 'taxy4fun-repository'
+    baseName = 'taxy4fun-persistence'
 }
 
 dependencies {
