@@ -1,6 +1,5 @@
 package com.taxy4fun.repository;
 
-import com.taxy4fun.repository.entity.Route;
 import com.taxy4fun.repository.entity.Vehicle;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,9 +9,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -38,40 +34,27 @@ public class VehicleRepositoryTest {
     @Test
     public void create() {
 
-        /*
-            Verificamos que todavia ¡NO!
-            hemos persistido la entidad
-         */
-        final Vehicle vehicle = newVehicle();
-        assertThat(vehicle.getId()).isNull();
+        final Vehicle entity = this.createVehicle();
 
-        /*
-            Probamos el repository y
-            verificamos que ha persistido
-         */
-        final Vehicle entity = this.repository.save(vehicle);
-        assertThat(entity.getId()).isNotNull();
         assertThat(entity.getBrand()).isEqualTo(BRAND_AUDI);
         assertThat(entity.getPlate()).isEqualTo(PLATE_AUDI);
 
         /*
-            Verificamos que se ha creado
-            la asociación Driver
+            Verificamos que se ha creado la asociación Driver
          */
         assertThat(entity.getDriver()).isNotNull();
         assertThat(entity.getDriver().getFirstname()).isEqualTo(DRIVER_NAME);
     }
 
+
     @Test
     public void delete() {
 
-        final Vehicle vehicle = newVehicle();
-        assertThat(vehicle.getId()).isNull();
+        final Vehicle entity = this.createVehicle();
 
-        final Vehicle vehicleSave = this.repository.save(vehicle);
         final Long initialCount = this.repository.count();
-        assertThat(vehicleSave.getId()).isNotNull();
-        final Long id = vehicleSave.getId();
+        assertThat(entity.getId()).isNotNull();
+        final Long id = entity.getId();
 
         this.repository.delete(id);
 
@@ -82,23 +65,10 @@ public class VehicleRepositoryTest {
     @Test
     public void findByPlate() {
 
-        /*
-            Verificamos que todavia ¡NO!
-            hemos persistido la entidad
-         */
-        Vehicle vehicle = newVehicle();
-        assertThat(vehicle.getId()).isNull();
+        final Vehicle entity = this.createVehicle();
 
         /*
-            Probamos el repository y
-            verificamos que ha persistido
-         */
-        final Vehicle entity = this.repository.save(vehicle);
-        assertThat(entity.getId()).isNotNull();
-
-        /*
-            Buscamos la entidad por uno
-            de sus atributos
+            Buscamos la entidad por uno de sus atributos
          */
         final Vehicle entityFound = this.repository.findByPlate(PLATE_AUDI);
         assertThat(entityFound).isNotNull();
@@ -108,11 +78,7 @@ public class VehicleRepositoryTest {
     @Test
     public void findByBrand() {
 
-        final Vehicle vehicle = newVehicle();
-        assertThat(vehicle.getId()).isNull();
-
-        final Vehicle vehicleSave = this.repository.save(vehicle);
-        assertThat(vehicleSave.getId()).isNotNull();
+        final Vehicle entity = this.createVehicle();
 
         Vehicle vehicleFound = this.repository.findByBrand(BRAND_AUDI);
         assertThat(vehicleFound).isNotNull();
@@ -122,13 +88,32 @@ public class VehicleRepositoryTest {
     @Test
     public void findByDriverEin() {
 
-        final Vehicle vehicleSaved = this.repository.save(newVehicle());
+        final Vehicle entity = this.createVehicle();
 
-        final Long driverEin = vehicleSaved.getDriver().getEin();
+        final Long driverEin = entity.getDriver().getEin();
         assertThat(driverEin).isNotNull();
+
         final Stream<Vehicle> vehicleFound = this.repository.findByDriverEin(driverEin);
         final Optional<Vehicle> first = vehicleFound.findFirst();
         assertThat(first.isPresent());
         assertThat(first.get().getDriver().getEin()).isEqualTo(driverEin);
     }
+
+
+    private Vehicle createVehicle() {
+        /*
+            Verificamos que todavia ¡NO! hemos persistido la entidad
+         */
+        final Vehicle bean = newVehicle();
+        assertThat(bean.getId()).isNull();
+
+        /*
+            Probamos el repository y verificamos que ha persistido
+         */
+        final Vehicle entity = this.repository.save(bean);
+        assertThat(entity.getId()).isNotNull();
+
+        return entity;
+    }
+
 }

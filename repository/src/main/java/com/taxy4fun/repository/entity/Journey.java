@@ -1,5 +1,8 @@
 package com.taxy4fun.repository.entity;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,6 +19,8 @@ public class Journey {
     private Long id;
     private String origin;
     private String destiny;
+
+    // Associations
     @ManyToOne
     private Customer customer;
     @ManyToOne
@@ -59,5 +64,16 @@ public class Journey {
 
     public void setVehicle(final Vehicle vehicle) {
         this.vehicle = vehicle;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+                .append("id", id)
+                .append("origin", origin)
+                .append("destiny", destiny)
+                .append("customer", customer)
+                .append("vehicle", vehicle)
+                .toString();
     }
 }
