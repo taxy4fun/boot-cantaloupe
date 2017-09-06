@@ -8,6 +8,7 @@ Madrid
 
 image:https://travis-ci.org/taxy4fun/boot-cantaloupe.svg?branch=master[] -> link:https://travis-ci.org/taxy4fun/boot-cantaloupe[master]
 
+image:https://api.codacy.com/project/badge/Grade/0a5ae680f7754190ac2dd6abd62f5981["Codacy code quality", link="https://www.codacy.com/app/cmarting/boot-cantaloupe?utm_source=github.com&utm_medium=referral&utm_content=taxy4fun/boot-cantaloupe&utm_campaign=Badge_Grade"]
 
 NOTE: testing and tasting the Boot fruit. Java-8, forgive us!!!
 
