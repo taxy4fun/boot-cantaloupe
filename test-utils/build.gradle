@@ -1,0 +1,22 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins { id "io.spring.dependency-management" version "1.0.0.RELEASE" }
+
+
+jar {
+    baseName = 'taxy4fun-test-utils'
+}
+
+dependencies {
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.8'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.8.8'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.3'
+}
+
+dependencyManagement {
+    imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
+}

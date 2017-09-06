@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins { id "io.spring.dependency-management" version "1.0.0.RELEASE" }
+
+jar {
+    baseName = 'taxy4fun-service-api'
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter")
+    compile "io.vavr:vavr:0.9.0"
+    compile 'org.apache.commons:commons-lang3:3.+'
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile 'org.mockito:mockito-core:2.+'
+}
+
+dependencyManagement {
+    imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
+}

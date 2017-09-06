@@ -1,0 +1,26 @@
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+
+    apply plugin: 'jacoco'
+    apply plugin: 'idea'
+
+    idea {
+        module {
+            downloadJavadoc = true
+        }
+    }
+
+    ext { springBootVersion = '1.5.4.RELEASE' }
+
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    version = '1.0'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}

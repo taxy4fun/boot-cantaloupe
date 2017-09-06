@@ -17,3 +17,4 @@ out/
 .settings
 .gradle/
 build/
+out/
