@@ -6,10 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Stream;
 
 /**
  * Created by mvillafuertem on 31/08/2017.
@@ -44,11 +41,16 @@ final class RepositoryTestUtils {
         vehicle.setBrand(BRAND_AUDI);
         vehicle.setDescription("A4 Black");
         vehicle.setDriver(newDriver());
-        vehicle.setRoute(newRoute());
+        vehicle.setRoute(newRouteWithPoints());
         return vehicle;
     }
 
     static Route newRoute() {
+        final Route route = new Route();
+        return route;
+    }
+
+    static Route newRouteWithPoints() {
         final Route route = new Route();
         route.setPoints(newPoints());
         return route;
