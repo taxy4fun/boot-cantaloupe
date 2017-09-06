@@ -3,13 +3,12 @@ package com.taxy4fun.repository.entity;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import javax.persistence.*;
-import java.time.LocalDateTime;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Stream;
 
 /**
  * Created by mvillafuertem on 02/09/2017.
@@ -37,7 +36,9 @@ public class Route {
     }
 
     public void setPoints(final List<Point> points) {
-        this.points = points;
+        if (points != null) {
+            this.points = points;
+        }
     }
 
     @Override

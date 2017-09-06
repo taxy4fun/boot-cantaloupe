@@ -38,9 +38,17 @@ public class RouteRepositoryTest {
     @Test
     public void createWithPoints() {
 
-        final Route routeSaved = this.repository.save(newRouteWithPoints());
-        routeSaved.getPoints().stream().forEach(System.out::println);
-        assertThat(routeSaved.getPoints().get(0).getDatetime()).isEqualTo(newLocalDateTime());
+        final Route entity = this.createRouteWithPoints();
+
+        final Route routeFound = this.repository.findOne(entity.getId());
+        assertThat(routeFound).isNotNull();
+        assertThat(routeFound.getPoints()).isNotEmpty();
+
+//        entity.getPoints().stream().forEach(System.out::println);
+//        assertThat(entity.getPoints().get(0).getDatetime()).isEqualTo(newLocalDateTime());
+
+
+//        this.repository.f
     }
 
     @Test
@@ -63,6 +71,16 @@ public class RouteRepositoryTest {
          */
         final Route entity = this.repository.save(bean);
         assertThat(entity.getId()).isNotNull();
+
+        return entity;
+    }
+
+    private Route createRouteWithPoints() {
+        final Route bean = newRoute();
+        bean.setPoints(newPoints());
+        final Route entity = this.repository.save(bean);
+        assertThat(entity.getId()).isNotNull();
+        assertThat(entity.getPoints()).isNotEmpty();
 
         return entity;
     }

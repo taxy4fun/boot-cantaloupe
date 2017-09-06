@@ -1,6 +1,11 @@
 package com.taxy4fun.repository;
 
-import com.taxy4fun.repository.entity.*;
+import com.taxy4fun.repository.entity.Driver;
+import com.taxy4fun.repository.entity.Person;
+import com.taxy4fun.repository.entity.Point;
+import com.taxy4fun.repository.entity.Profile;
+import com.taxy4fun.repository.entity.Route;
+import com.taxy4fun.repository.entity.Vehicle;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -25,7 +30,7 @@ final class RepositoryTestUtils {
         person.setIc(1234567890L);
         person.setFirstname(PERSON);
         person.setLastname(PERSON);
-        person.setBirthdate(LocalDate.of(1900,10,30));
+        person.setBirthdate(LocalDate.of(1900, 10, 30));
         person.setPhone(1234567890);
 
         person.setAddress("Calle de Madrid");
@@ -59,8 +64,13 @@ final class RepositoryTestUtils {
     static List<Point> newPoints() {
         final List<Point> points = new ArrayList<>();
         Point point = new Point(1L, 2L);
-        point.setDatetime(newLocalDateTime());
+        point.setDatetime(newLocalDateTime(8, 0, 0));
         points.add(point);
+
+        point = new Point(2L, 4L);
+        point.setDatetime(newLocalDateTime(8, 0, 1));
+        points.add(point);
+
         return points;
     }
 
@@ -68,13 +78,22 @@ final class RepositoryTestUtils {
         return LocalDateTime.of(newDate(), newTime());
     }
 
+    static LocalDateTime newLocalDateTime(Integer hour, Integer minute, Integer second) {
+        return LocalDateTime.of(newDate(), newTime());
+    }
+
     private static LocalTime newTime() {
-        final LocalTime time = LocalTime.of(14,30,25);
+        final LocalTime time = newTime(14, 30, 25);
+        return time;
+    }
+
+    private static LocalTime newTime(Integer hour, Integer minute, Integer second) {
+        final LocalTime time = LocalTime.of(hour, minute, second);
         return time;
     }
 
     private static LocalDate newDate() {
-        final LocalDate date = LocalDate.of(2017,8,21);
+        final LocalDate date = LocalDate.of(2017, 8, 21);
         return date;
     }
 
@@ -85,7 +104,7 @@ final class RepositoryTestUtils {
         driver.setIc(1234567890L);
         driver.setFirstname(DRIVER_NAME);
         driver.setLastname(DRIVER_LASTNAME);
-        driver.setBirthdate(LocalDate.of(1900,10,30));
+        driver.setBirthdate(LocalDate.of(1900, 10, 30));
 
         driver.setEin(123456789L);
         driver.setProfile(newProfile());
