@@ -1,6 +1,13 @@
 package com.taxy4fun.repository;
 
-import com.taxy4fun.repository.entity.*;
+import com.taxy4fun.repository.entity.Customer;
+import com.taxy4fun.repository.entity.Driver;
+import com.taxy4fun.repository.entity.Journey;
+import com.taxy4fun.repository.entity.Person;
+import com.taxy4fun.repository.entity.Point;
+import com.taxy4fun.repository.entity.Profile;
+import com.taxy4fun.repository.entity.Route;
+import com.taxy4fun.repository.entity.Vehicle;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -13,11 +20,14 @@ import java.util.List;
  */
 final class RepositoryTestUtils {
 
-    static final String BRAND_AUDI = "Audi";
-    static final String PLATE_AUDI = "1234ABC";
-    static final String DRIVER_NAME = "Conductor";
-    static final String DRIVER_LASTNAME = "Bueno";
-    static final String PERSON = "Person";
+    public static final String BRAND_AUDI = "Audi";
+    public static final String PLATE_AUDI = "1234ABC";
+    public static final String DRIVER_NAME = "Conductor";
+    public static final String DRIVER_LASTNAME = "Bueno";
+    public static final String PERSON = "Person";
+    public static final String PERSON_EMAIL = "first.last@taxy4fun.com";
+    public static final long DRIVER_EIN = 123456789L;
+    public static final long DRIVER_LICENSE = 12345678L;
 
     static Person newPerson() {
 
@@ -98,10 +108,12 @@ final class RepositoryTestUtils {
         driver.setIc(1234567890L);
         driver.setFirstname(DRIVER_NAME);
         driver.setLastname(DRIVER_LASTNAME);
-        driver.setBirthdate(LocalDate.of(1900, 10, 30));
+        driver.setBirthdate(LocalDate.of(1980, 10, 30));
+        driver.setLicense(DRIVER_LICENSE);
 
-        driver.setEin(123456789L);
+        driver.setEin(DRIVER_EIN);
         driver.setProfile(newProfile());
+
         return driver;
     }
 
@@ -109,6 +121,7 @@ final class RepositoryTestUtils {
     static Profile newProfile() {
 
         final Profile profile = new Profile();
+        profile.setEmail(PERSON_EMAIL);
         return profile;
     }
 
