@@ -374,10 +374,13 @@ Definir la regla de negocio para completar la operación.
 === Solicitar un trayecto por un cliente
 . El cliente se autentica en la aplicación
 . Se obtiene la posición actual del cliente
-. Se solicita el destino
-. Se muestra propuesta de vehículos disponibles
-. El cliente elige el vehículo para viajar
+. Se obtiene la posición del conjunto de vehículos que pueden prestar el servicio en función de unas reglas de negocio
+. El cliente determina el destino del viaje
+. El cliente solicita el servicio
+. El sistema asigna un vehículo para prestar el servicio al cliente
+. El conductor acepta la prestación del servicio
 . El cliente recibe notificación de solicitud aceptada
+
 
 === Esperando a ser recogido
 . El cliente ha recibido una notificación de solicitud aceptada previamente
@@ -395,6 +398,12 @@ Definir la regla de negocio para completar la operación.
 === Iniciar un trayecto por un conductor
 . El conductor recibe una notificación de solicitud de carrera
 . El conductor acepta la solicitud y comienza la espera por parte el cliente
+
+TODO
+. Tras viajar hasta la posición del cliente e identificarlo, el driver inicia el viaje hacia el destino
+
+se crean dos rutas: ruta de recogida y ruta de destino
+
 
 === Finalizar un trayecto por un conductor
 . El conductor llega al destino solicitado por el cliente
@@ -441,7 +450,7 @@ Se permite un filtro sencillo con rango de fechas.
 [red]#TODO# jena
 
 
-== URL frontal develop 
+== URL frontal develop
 Aqui se pueden ver las pantallas https://backoffice-4yf-develop.herokuapp.com/
 
 == Referencias
@@ -457,7 +466,7 @@ Aqui se pueden ver las pantallas https://backoffice-4yf-develop.herokuapp.com/
  . http://blog.vavr.io/redundancy-of-the-java-language/
  . http://blog.vavr.io/pattern-matching-starter/
  . http://www.baeldung.com/javaslang-try
- 
+
 === Data Access
  . https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
  . https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html
