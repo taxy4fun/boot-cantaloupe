@@ -32,7 +32,7 @@ public class RouteRepositoryTest {
     public void create() {
         Route entity = this.createRoute();
 
-        assertThat(entity.getPoints()).isEmpty();
+        assertThat(entity.getFootprints()).isEmpty();
     }
 
     @Test
@@ -54,15 +54,15 @@ public class RouteRepositoryTest {
     @Test
     public void update() {
         final Route entity = this.createRouteWithPoints();
-        final Integer previousCount = entity.getPoints().size();
+        final Integer previousCount = entity.getFootprints().size();
 
-        entity.getPoints().remove(0);
+        entity.getFootprints().remove(0);
         final Long entityId = entity.getId();
         this.repository.findOne(entityId);
 
         final Route routeFound = this.repository.findOne(entityId);
 
-        final Integer actualCount = routeFound.getPoints().size();
+        final Integer actualCount = routeFound.getFootprints().size();
         assertThat(previousCount - actualCount).isEqualTo(1);
     }
 
@@ -73,19 +73,13 @@ public class RouteRepositoryTest {
 
         final Route routeFound = this.repository.findOne(entity.getId());
         assertThat(routeFound).isNotNull();
-        assertThat(routeFound.getPoints()).isNotEmpty();
-
-//        entity.getPoints().stream().forEach(System.out::println);
-//        assertThat(entity.getPoints().get(0).getDatetime()).isEqualTo(newLocalDateTime());
-
-
-//        this.repository.f
+        assertThat(routeFound.getFootprints()).isNotEmpty();
     }
 
     @Test
     public void findByPlate() {
 
-        final Route routeSaved = this.repository.save(newRouteWithPoints());
+        final Route routeSaved = this.repository.save(newRouteWithFootprints());
 
 
     }
@@ -109,10 +103,10 @@ public class RouteRepositoryTest {
     private Route createRouteWithPoints() {
 
         final Route bean = newRoute();
-        bean.setPoints(newPoints());
+        bean.setFootprints(newFootprints(5));
         final Route entity = this.repository.save(bean);
         assertThat(entity.getId()).isNotNull();
-        assertThat(entity.getPoints()).isNotEmpty();
+        assertThat(entity.getFootprints()).isNotEmpty();
         return entity;
     }
 }

@@ -23,7 +23,7 @@ public class Route {
     private Long id;
 
     @ElementCollection
-    private List<Point> points = new ArrayList<>();
+    private List<Footprint> footprints = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Journey journey;
@@ -36,13 +36,21 @@ public class Route {
         this.id = id;
     }
 
-    public List<Point> getPoints() {
-        return points;
+    public Journey getJourney() {
+        return journey;
     }
 
-    public void setPoints(final List<Point> points) {
-        if (points != null) {
-            this.points = points;
+    public void setJourney(final Journey journey) {
+        this.journey = journey;
+    }
+
+    public List<Footprint> getFootprints() {
+        return footprints;
+    }
+
+    public void setFootprints(final List<Footprint> footprints) {
+        if (footprints != null) {
+            this.footprints = footprints;
         }
     }
 
@@ -50,7 +58,7 @@ public class Route {
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
                 .append("id", id)
-                .append("points", points)
+                .append("footprints", footprints)
                 .toString();
     }
 }

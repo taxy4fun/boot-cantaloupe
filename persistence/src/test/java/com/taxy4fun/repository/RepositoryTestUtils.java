@@ -2,9 +2,9 @@ package com.taxy4fun.repository;
 
 import com.taxy4fun.repository.entity.Customer;
 import com.taxy4fun.repository.entity.Driver;
+import com.taxy4fun.repository.entity.Footprint;
 import com.taxy4fun.repository.entity.Journey;
 import com.taxy4fun.repository.entity.Person;
-import com.taxy4fun.repository.entity.Point;
 import com.taxy4fun.repository.entity.Profile;
 import com.taxy4fun.repository.entity.Route;
 import com.taxy4fun.repository.entity.Vehicle;
@@ -12,8 +12,10 @@ import com.taxy4fun.repository.entity.Vehicle;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * Created by mvillafuertem on 31/08/2017.
@@ -59,23 +61,20 @@ final class RepositoryTestUtils {
         return route;
     }
 
-    static Route newRouteWithPoints() {
+    static Route newRouteWithFootprints() {
         final Route route = new Route();
-        route.setPoints(newPoints());
+        route.setFootprints(newFootprints(5));
         return route;
     }
 
-    static List<Point> newPoints() {
-        final List<Point> points = new ArrayList<>();
-        Point point = new Point(1L, 2L);
-        point.setDatetime(newLocalDateTime(8, 0, 0));
-        points.add(point);
 
-        point = new Point(2L, 4L);
-        point.setDatetime(newLocalDateTime(8, 0, 1));
-        points.add(point);
+    public static List<Footprint> newFootprints(final Integer number) {
 
-        return points;
+        Stream<Footprint> pointStream = IntStream.rangeClosed(1, number)
+                .mapToDouble(i -> i * 1.0)
+                .mapToObj(i -> new Footprint(i, i, LocalDateTime.now()));
+
+        return pointStream.collect(Collectors.toList());
     }
 
     static LocalDateTime newLocalDateTime() {
