@@ -153,3 +153,7 @@ Escribir las trazas de ejecución con nivel `debug` a un archivo para su posteri
 Lanzar un test determinado en un subproyecto.
 
  ./gradlew repository:test -Dtest.single=PersonRepositoryTest
+ 
+Generar informe de dependencias del proyecto
+
+ ./gradlew htmlDependencyReport
