@@ -372,15 +372,28 @@ Definir la regla de negocio para completar la operación.
 .. https://httpstatuses.com/302[302] - Found en login válido y redirección a home
 
 === Solicitar un trayecto por un cliente
-. El cliente se autentica en la aplicación
-. Se obtiene la posición actual del cliente
-. Se obtiene la posición del conjunto de vehículos que pueden prestar el servicio en función de unas reglas de negocio
+.prerrequisitos
+. El usuario está registrado en el sistema
+. El usuario está autenticado en el sistema
+
+.flujo:
+
+. El usuario accede al sistema mediante una aplicación con localizador de posición
+. La aplicación obtiene la posición GPS, longitud y latitud
+. La aplicación muestra un mapa con la posición actual del cliente.
+. Se obtiene la posición del conjunto de vehículos que pueden prestar el servicio en función de unas reglas de negocio. Por ejemplo: todos los vehículos, los más cercanos, etc.
 . El cliente determina el destino del viaje
 . El cliente solicita el servicio
-. El sistema asigna un vehículo para prestar el servicio al cliente
-. El conductor acepta la prestación del servicio
+. El sistema crea un viaje (Journey)
+. Se obtiene la posición del conjunto de vehículos que pueden prestar el servicio en función de unas reglas de negocio.
+. El sistema determina los vehículos candidatos para la prestación del servicio.
+. El sistema envía notificación a los vehículos candidatos.
+. Uno o varios candidatos pueden aceptar la prestación del servicio.
+. El sistema asigna un vehículo para prestar el servicio al cliente en base a Reglas de Negocio.
+. Se actualiza el Journey con los datos necesarios.
+. El sistema envía notificación de la asignación del servicio al candidato seleccionado.
 . El cliente recibe notificación de solicitud aceptada
-
+. Se actualiza el Journey con los datos necesarios.
 
 === Esperando a ser recogido
 . El cliente ha recibido una notificación de solicitud aceptada previamente
