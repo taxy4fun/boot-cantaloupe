@@ -13,7 +13,7 @@ allprojects {
         }
     }
 
-    ext { springBootVersion = '1.5.4.RELEASE' }
+    ext { springBootVersion = '1.5.7.RELEASE' }
 
 }
 

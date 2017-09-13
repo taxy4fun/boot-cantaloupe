@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Created by mvillafuertem on 9/5/17.
  */
-@SpringBootTest(classes = RouteRepositoryTest.class)
+@SpringBootTest(classes = RepositoryConfig.class)
 @DataJpaTest
 @RunWith(SpringRunner.class)
 public class RouteRepositoryTest {
