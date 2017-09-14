@@ -16,7 +16,6 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 /**
  * Created by mvillafuertem on 9/1/17.
  */
-@SpringBootTest(classes = RepositoryConfig.class)
 @DataJpaTest
 @RunWith(SpringRunner.class)
 public class DriverRepositoryTest {
