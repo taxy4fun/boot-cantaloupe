@@ -1,4 +1,7 @@
+plugins { id "io.spring.dependency-management" version "1.0.0.RELEASE" }
+
 allprojects {
+
     repositories {
         mavenCentral()
     }
@@ -14,16 +17,102 @@ allprojects {
     }
 
     ext { springBootVersion = '1.5.7.RELEASE' }
-
 }
 
 subprojects {
-    apply plugin: 'java'
-
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: "java"
     version = '1.0'
-
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
-
     compileJava.options.encoding = 'UTF-8'
+
+    dependencyManagement {
+        imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
+    }
+}
+
+
+project(':controller') {
+
+    jar {
+        baseName = 'taxy4fun-rest-controller'
+    }
+
+    dependencies {
+        compile project(':service-api')
+        compile project(':test-utils')
+
+        compile("org.springframework.boot:spring-boot-starter")
+        compile "io.vavr:vavr:0.9.0"
+        compile 'org.apache.commons:commons-lang3:3.+'
+        compile group: 'org.springframework', name: 'spring-webmvc', version: '4.+'
+        compile 'com.fasterxml.jackson.core:jackson-databind:2.8.8'
+        compile 'com.fasterxml.jackson.core:jackson-core:2.8.8'
+        compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.3'
+
+        testCompile("org.springframework.boot:spring-boot-starter-test")
+        testCompile 'org.mockito:mockito-core:2.+'
+        testRuntime 'javax.servlet:javax.servlet-api:3.1.0'
+    }
+
+}
+
+
+project(':service-api') {
+
+    jar {
+        baseName = 'taxy4fun-service-api'
+    }
+
+    dependencies {
+        compile("org.springframework.boot:spring-boot-starter")
+        compile "io.vavr:vavr:0.9.0"
+        compile 'org.apache.commons:commons-lang3:3.+'
+        testCompile("org.springframework.boot:spring-boot-starter-test")
+        testCompile 'org.mockito:mockito-core:2.+'
+    }
+}
+
+project(':hello-world') {
+
+    jar {
+        baseName = 'taxy4fun-hello-world'
+    }
+
+    dependencies {
+        compile("org.springframework.boot:spring-boot-starter")
+        testCompile("org.springframework.boot:spring-boot-starter-test")
+    }
+
+
+}
+
+project(':persistence') {
+
+    jar {
+        baseName = 'taxy4fun-persistence'
+    }
+
+    dependencies {
+        compile("org.springframework.boot:spring-boot-starter")
+        compile("org.springframework.boot:spring-boot-starter-data-jpa")
+        compile 'org.apache.commons:commons-lang3:3.+'
+        testCompile("org.springframework.boot:spring-boot-starter-test")
+        testCompile "com.h2database:h2:1.4.+"
+    }
+
+}
+
+project(':test-utils') {
+
+    jar {
+        baseName = 'taxy4fun-test-utils'
+    }
+
+    dependencies {
+        compile 'com.fasterxml.jackson.core:jackson-databind:2.8.8'
+        compile 'com.fasterxml.jackson.core:jackson-core:2.8.8'
+        compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.3'
+    }
 }
