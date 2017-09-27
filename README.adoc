@@ -20,7 +20,7 @@ NOTE: testing and tasting the Boot fruit. Java-8, forgive us!!!
 .Git commit message conventions
 
  - http://karma-runner.github.io/1.0/dev/git-commit-msg.html
- 
+
 == JDK & friends download and installation
 
 . Java SE Development Kit 8
@@ -32,9 +32,9 @@ NOTE: testing and tasting the Boot fruit. Java-8, forgive us!!!
  sudo tar xvf jdk-8u144-linux-x64.tar.gz -C /usr/local/share/
  sudo ln -sf /usr/local/share/jdk1.8.0_144/bin/java /usr/local/bin/java
  java -version
- 
+
  . Java SE Development Kit 9
- 
+
  wget --no-check-certificate --no-cookies \
   --header "Cookie: oraclelicense=accept-securebackup-cookie" \
   --progress=dot:giga \
@@ -50,7 +50,7 @@ NOTE: testing and tasting the Boot fruit. Java-8, forgive us!!!
  sudo unzip gradle-4.1-all.zip -d /usr/local/share/
  sudo ln -sf /usr/local/share/gradle-4.1/bin/gradle /usr/local/bin/gradle
  gradle -version
- gradle wrapper --gradle-version 4.1
+ gradle wrapper --gradle-version 4.2
 
 
 . Maven 3.5.0
@@ -89,7 +89,7 @@ $ touch src/main/java/com/myproject/App.java <4>
 .build.gradle
 ----
 plugins {
-    id 'org.springframework.boot' version '1.5.6.RELEASE'
+    id 'org.springframework.boot' version '1.5.7.RELEASE'
     id 'java'
 }
 
@@ -163,7 +163,7 @@ Escribir las trazas de ejecución con nivel `debug` a un archivo para su posteri
 Lanzar un test determinado en un subproyecto.
 
  ./gradlew repository:test -Dtest.single=PersonRepositoryTest
- 
+
 Generar informe de dependencias del proyecto
 
  ./gradlew htmlDependencyReport

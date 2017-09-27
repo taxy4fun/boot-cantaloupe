@@ -14,8 +14,14 @@ public class Journey {
     @Id
     @GeneratedValue
     private Long id;
+
+    //TODO type Point
     private String origin;
     private String destiny;
+
+    //TODO ManyToOne Driver
+    //TODO OneToOne pickup Route
+    //TODO OneToOne destination Route
 
     // Associations
     @ManyToOne(cascade = CascadeType.PERSIST)

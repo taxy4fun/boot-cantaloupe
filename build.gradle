@@ -1,4 +1,7 @@
-plugins { id "io.spring.dependency-management" version "1.0.0.RELEASE" }
+plugins {
+    id "io.spring.dependency-management" version "1.0.0.RELEASE"
+    id 'org.springframework.boot' version '1.5.7.RELEASE'
+}
 
 allprojects {
 
@@ -17,19 +20,32 @@ allprojects {
     }
 
     ext { springBootVersion = '1.5.7.RELEASE' }
+
 }
 
 subprojects {
     apply plugin: 'io.spring.dependency-management'
     apply plugin: "java"
+
     version = '1.0'
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
+
     compileJava.options.encoding = 'UTF-8'
 
     dependencyManagement {
         imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
     }
+
+    ext.libraries = [
+            vavr               : 'io.vavr:vavr:0.9.+',
+            commons_lang3      : 'org.apache.commons:commons-lang3:3.+',
+            jackson_annotations: 'com.fasterxml.jackson.core:jackson-annotations:2.9.+',
+            jackson_core       : 'com.fasterxml.jackson.core:jackson-core:2.9.+',
+            jackson_databind   : 'com.fasterxml.jackson.core:jackson-databind:2.9.+',
+            mockito_core       : 'org.mockito:mockito-core:2.8.47'
+    ]
+
 }
 
 
@@ -44,17 +60,19 @@ project(':controller') {
         compile project(':test-utils')
 
         compile("org.springframework.boot:spring-boot-starter")
-        compile "io.vavr:vavr:0.9.0"
-        compile 'org.apache.commons:commons-lang3:3.+'
+        compile libraries.vavr
+        compile libraries.commons_lang3
         compile group: 'org.springframework', name: 'spring-webmvc', version: '4.+'
-        compile 'com.fasterxml.jackson.core:jackson-databind:2.8.8'
-        compile 'com.fasterxml.jackson.core:jackson-core:2.8.8'
-        compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.3'
+        compile libraries.jackson_annotations
+        compile libraries.jackson_core
+        compile libraries.jackson_databind
 
         testCompile("org.springframework.boot:spring-boot-starter-test")
-        testCompile 'org.mockito:mockito-core:2.+'
+
+        testCompile libraries.mockito_core
         testRuntime 'javax.servlet:javax.servlet-api:3.1.0'
     }
+
 
 }
 
@@ -67,24 +85,30 @@ project(':service-api') {
 
     dependencies {
         compile("org.springframework.boot:spring-boot-starter")
-        compile "io.vavr:vavr:0.9.0"
-        compile 'org.apache.commons:commons-lang3:3.+'
+        compile libraries.vavr
+        compile libraries.commons_lang3
         testCompile("org.springframework.boot:spring-boot-starter-test")
-        testCompile 'org.mockito:mockito-core:2.+'
+        testCompile libraries.mockito_core
     }
+
 }
 
 project(':hello-world') {
 
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'application'
+
     jar {
         baseName = 'taxy4fun-hello-world'
     }
+
 
     dependencies {
         compile("org.springframework.boot:spring-boot-starter")
         testCompile("org.springframework.boot:spring-boot-starter-test")
     }
 
+    mainClassName = 'com.springuers.taxy4fun.HelloWorldApp'
 
 }
 
@@ -97,7 +121,7 @@ project(':persistence') {
     dependencies {
         compile("org.springframework.boot:spring-boot-starter")
         compile("org.springframework.boot:spring-boot-starter-data-jpa")
-        compile 'org.apache.commons:commons-lang3:3.+'
+        compile libraries.commons_lang3
         testCompile("org.springframework.boot:spring-boot-starter-test")
         testCompile "com.h2database:h2:1.4.+"
     }
@@ -111,8 +135,12 @@ project(':test-utils') {
     }
 
     dependencies {
-        compile 'com.fasterxml.jackson.core:jackson-databind:2.8.8'
-        compile 'com.fasterxml.jackson.core:jackson-core:2.8.8'
-        compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.3'
+        compile libraries.jackson_annotations
+        compile libraries.jackson_core
+        compile libraries.jackson_databind
+    }
+
+    bootRepackage {
+        enabled = false
     }
 }
