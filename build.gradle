@@ -1,6 +1,7 @@
 plugins {
     id "io.spring.dependency-management" version "1.0.0.RELEASE"
     id 'org.springframework.boot' version '1.5.7.RELEASE'
+    id 'net.saliman.cobertura' version '2.5.0'
 }
 
 allprojects {
@@ -18,6 +19,7 @@ allprojects {
 subprojects {
     apply plugin: 'io.spring.dependency-management'
     apply plugin: "java"
+    apply plugin: 'net.saliman.cobertura'
 
     version = '1.0'
     sourceCompatibility = 1.8
