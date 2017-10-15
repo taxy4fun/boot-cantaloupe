@@ -1,0 +1,30 @@
+= project requirements
+Madrid 2017, Octubre
+:icons: font
+:toc: left
+:sectnums:
+:source-highlighter: coderay
+:experimental:
+
+== Referencias
+
+=== Testing
+ . http://junit.org/junit5/docs/current/user-guide/[JUnit-5 user guide]
+ . https://www.petrikainulainen.net/programming/testing/junit-5-tutorial-running-unit-tests-with-gradle/[JUnit 5 Tutorial: Running Unit Tests With Gradle @ Petri Kainulainen]
+
+=== Rest MVC
+ . https://spring.io/guides/tutorials/bookmarks/
+ . https://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc
+ . http://memorynotfound.com/unit-test-spring-mvc-rest-service-junit-mockito/
+ . http://memorynotfound.com/spring-mvc-restful-web-service-crud-example/
+
+=== Business logic
+ . http://www.vavr.io/vavr-docs/
+ . http://blog.vavr.io/idiomatic-javaslang-the-for-comprehension/
+ . http://blog.vavr.io/redundancy-of-the-java-language/
+ . http://blog.vavr.io/pattern-matching-starter/
+ . http://www.baeldung.com/javaslang-try
+
+=== Data Access
+ . https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+ . https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html

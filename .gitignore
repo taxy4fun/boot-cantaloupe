@@ -1,20 +1,19 @@
-# maven
-target/
+# eclipse
+.classpath
+.project
+.settings
+
+# gradle
+.gradle/
+out/
+build/
 
 # intellij
 .idea
 *.iml
 
+# maven
+target/
+
 # os x
 .DS_Store
-
-# eclipse and fellows
-.project
-.classpath
-
-# gradle
-out/
-.settings
-.gradle/
-build/
-out/
