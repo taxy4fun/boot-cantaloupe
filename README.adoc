@@ -167,3 +167,6 @@ Lanzar un test determinado en un subproyecto.
 Generar informe de dependencias del proyecto
 
  ./gradlew htmlDependencyReport
+
+== links
+link:docs/links.adoc[Project links]
