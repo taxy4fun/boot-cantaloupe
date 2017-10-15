@@ -1,3 +1,12 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.1'
+    }
+}
+
 plugins {
     id "io.spring.dependency-management" version "1.0.0.RELEASE"
     id 'org.springframework.boot' version '1.5.7.RELEASE'
@@ -82,13 +91,18 @@ project(':hello-world') {
 
     apply plugin: 'org.springframework.boot'
     apply plugin: 'application'
+    apply plugin: 'org.junit.platform.gradle.plugin'
+
 
     jar.baseName = 'taxy4fun-hello-world'
 
 
     dependencies {
-        compile("org.springframework.boot:spring-boot-starter")
-        testCompile("org.springframework.boot:spring-boot-starter-test")
+        compile 'org.springframework.boot:spring-boot-starter'
+        compile libraries.commons_lang3
+        testCompile 'org.springframework.boot:spring-boot-starter-test'
+        testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.1'
+        testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.0.1'
     }
 
     mainClassName = 'com.springuers.taxy4fun.HelloWorldApp'
