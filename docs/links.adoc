@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-= project requirements
-=======
 = project links
->>>>>>> doc: refactor documentation
 Madrid 2017, Octubre
 :icons: font
 :toc: left
