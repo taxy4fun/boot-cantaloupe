@@ -160,9 +160,10 @@ Escribir las trazas de ejecución con nivel `debug` a un archivo para su posteri
 
  ./gradlew test --debug > /tmp/gradle.log
 
-Lanzar un test determinado en un subproyecto.
+Lanzar un test o grupo de tests determinado en un subproyecto.
 
  ./gradlew repository:test -Dtest.single=PersonRepositoryTest
+ ./gradlew clean -Dtest.single=*DtoTest test
 
 Generar informe de dependencias del proyecto
 
