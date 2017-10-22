@@ -39,4 +39,5 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
 
       # run tests!
-      - run: gradle build
+      - run: ./gradlew build
+      - run: ./gradlew hello-world:bootRun
