@@ -9,7 +9,7 @@ buildscript {
 
 plugins {
     id "io.spring.dependency-management" version "1.0.0.RELEASE"
-    id 'org.springframework.boot' version '1.5.7.RELEASE'
+    id 'org.springframework.boot' version '1.5.8.RELEASE'
     id 'net.saliman.cobertura' version '2.5.0'
 }
 
@@ -22,7 +22,7 @@ allprojects {
     apply plugin: 'project-report'
 
     idea.module.downloadJavadoc = true
-    ext.springBootVersion = '1.5.7.RELEASE'
+    ext.springBootVersion = '1.5.8.RELEASE'
 }
 
 subprojects {
