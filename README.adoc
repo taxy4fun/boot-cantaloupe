@@ -111,7 +111,7 @@ dependencies {
 [source, java]
 .App.java
 ----
-package com.myproject;
+package com.springuers.taxy4fun;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -120,17 +120,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class App implements CommandLineRunner {
+public class HelloWorldApp implements CommandLineRunner {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(HelloWorldApp.class);
 
     @Override
     public void run(String... args) throws Exception {
-        LOGGER.info("Hola Mundo!");
+        LOGGER.info("Hello from Boot Cantaloupe basic application!");
     }
 
     public static void main (String[] args) {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(HelloWorldApp.class, args);
     }
 }
 ----
@@ -141,12 +141,12 @@ public class App implements CommandLineRunner {
 [source, bash]
 .Terminal.app
 ----
-$ gradle tasks <1>
+$ ./gradlew tasks <1>
 
-$ gradle boRu <2>
+$ gradlew hello-world:boRu <2>
 
-YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.myproject.App : Hola Mundo!
-YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.myproject.App : Started App in 10.975 seconds (JVM running for 11.303)
+YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.springuers.taxy4fun.HelloWorldApp : Hello from Boot Cantaloupe basic application!
+YYYY-MM-DD HH:mm:ss  INFO 1049 --- [main] com.springuers.taxy4fun.HelloWorldApp : Started HelloWorldApp in 10.813 seconds (JVM running for 11.138)
 ----
 
 == Useful commands

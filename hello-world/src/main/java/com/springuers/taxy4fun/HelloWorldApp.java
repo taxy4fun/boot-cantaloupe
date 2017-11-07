@@ -13,7 +13,7 @@ public class HelloWorldApp implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("Hello from Boot Cantaloupe basic application");
+        logger.info("Hello from Boot Cantaloupe basic application!");
     }
 
     public static void main(String[] args) throws Exception {
