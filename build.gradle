@@ -46,7 +46,7 @@ subprojects {
             jackson_annotations: 'com.fasterxml.jackson.core:jackson-annotations:2.9.+',
             jackson_core       : 'com.fasterxml.jackson.core:jackson-core:2.9.+',
             jackson_databind   : 'com.fasterxml.jackson.core:jackson-databind:2.9.+',
-            mockito_core       : 'org.mockito:mockito-core:2.8.47'
+            mockito_core       : 'org.mockito:mockito-core:2.12.0'
     ]
 }
 
@@ -59,16 +59,17 @@ project(':controller') {
         compile project(':service-api')
         compile project(':test-utils')
 
-        compile("org.springframework.boot:spring-boot-starter")
-        compile libraries.vavr
-        compile libraries.commons_lang3
-        compile group: 'org.springframework', name: 'spring-webmvc', version: '4.+'
-        compile libraries.jackson_annotations
-        compile libraries.jackson_core
-        compile libraries.jackson_databind
+        compile libraries.vavr,
+                libraries.commons_lang3,
+                libraries.jackson_annotations,
+                libraries.jackson_core,
+                libraries.jackson_databind,
+                'org.springframework.boot:spring-boot-starter',
+                'org.springframework:spring-webmvc:4.+'
 
-        testCompile("org.springframework.boot:spring-boot-starter-test")
-        testCompile libraries.mockito_core
+        testCompile 'org.springframework.boot:spring-boot-starter-test',
+                libraries.mockito_core
+
         testRuntime 'javax.servlet:javax.servlet-api:3.1.0'
     }
 }
@@ -79,11 +80,12 @@ project(':service-api') {
     jar.baseName = 'taxy4fun-service-api'
 
     dependencies {
-        compile("org.springframework.boot:spring-boot-starter")
-        compile libraries.vavr
-        compile libraries.commons_lang3
-        testCompile("org.springframework.boot:spring-boot-starter-test")
-        testCompile libraries.mockito_core
+        compile 'org.springframework.boot:spring-boot-starter',
+                libraries.vavr,
+                libraries.commons_lang3
+
+        testCompile 'org.springframework.boot:spring-boot-starter-test',
+                libraries.mockito_core
     }
 }
 
@@ -98,11 +100,12 @@ project(':hello-world') {
 
 
     dependencies {
-        compile 'org.springframework.boot:spring-boot-starter'
-        compile libraries.commons_lang3
-        testCompile 'org.springframework.boot:spring-boot-starter-test'
-        testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.1'
-        testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.0.1'
+        compile libraries.commons_lang3,
+                'org.springframework.boot:spring-boot-starter'
+
+        testCompile 'org.springframework.boot:spring-boot-starter-test',
+                'org.junit.jupiter:junit-jupiter-api:5.0.+',
+                'org.junit.jupiter:junit-jupiter-engine:5.0.+'
     }
 
     mainClassName = 'com.springuers.taxy4fun.HelloWorldApp'
@@ -113,11 +116,12 @@ project(':persistence') {
     jar.baseName = 'taxy4fun-persistence'
 
     dependencies {
-        compile("org.springframework.boot:spring-boot-starter")
-        compile("org.springframework.boot:spring-boot-starter-data-jpa")
-        compile libraries.commons_lang3
-        testCompile("org.springframework.boot:spring-boot-starter-test")
-        testCompile "com.h2database:h2:1.4.+"
+        compile libraries.commons_lang3,
+                'org.springframework.boot:spring-boot-starter',
+                'org.springframework.boot:spring-boot-starter-data-jpa'
+
+        testCompile 'org.springframework.boot:spring-boot-starter-test',
+                'com.h2database:h2:1.4.+'
     }
 }
 
@@ -126,9 +130,9 @@ project(':test-utils') {
     jar.baseName = 'taxy4fun-test-utils'
 
     dependencies {
-        compile libraries.jackson_annotations
-        compile libraries.jackson_core
-        compile libraries.jackson_databind
+        compile libraries.jackson_annotations,
+                libraries.jackson_core,
+                libraries.jackson_databind
     }
 
     bootRepackage.enabled = false

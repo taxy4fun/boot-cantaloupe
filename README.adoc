@@ -43,7 +43,7 @@ NOTE: testing and tasting the Boot fruit. Java-8, forgive us!!!
  sudo ln -sf /usr/local/share/jdk-9/bin/java /usr/local/bin/java
  java -version
 
-. Gradle 4.0
+. Gradle 4.x [check last version]
 
  wget --progress=dot:giga \
    https://services.gradle.org/distributions/gradle-4.2-all.zip
@@ -53,7 +53,7 @@ NOTE: testing and tasting the Boot fruit. Java-8, forgive us!!!
  gradle wrapper --gradle-version 4.2
 
 
-. Maven 3.5.0
+. Maven 3.5.x [check last version]
 
  wget --progress=dot:giga \
    http://www-us.apache.org/dist/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
@@ -89,7 +89,7 @@ $ touch src/main/java/com/myproject/App.java <4>
 .build.gradle
 ----
 plugins {
-    id 'org.springframework.boot' version '1.5.7.RELEASE'
+    id 'org.springframework.boot' version '1.5.8.RELEASE'
     id 'java'
 }
 
