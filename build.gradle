@@ -101,7 +101,8 @@ project(':hello-world') {
 
     dependencies {
         compile libraries.commons_lang3,
-                'org.springframework.boot:spring-boot-starter'
+                'org.springframework.boot:spring-boot-starter',
+                'org.apiguardian:apiguardian-api:1.0.0'
 
         testCompile 'org.springframework.boot:spring-boot-starter-test',
                 'org.junit.jupiter:junit-jupiter-api:5.0.+',
