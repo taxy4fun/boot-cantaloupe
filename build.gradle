@@ -48,6 +48,12 @@ subprojects {
             jackson_databind   : 'com.fasterxml.jackson.core:jackson-databind:2.9.+',
             mockito_core       : 'org.mockito:mockito-core:2.12.0'
     ]
+
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:deprecation"
+        }
+    }
 }
 
 
@@ -148,9 +154,7 @@ task codeCoverageReport(type: JacocoReport) {
 
     reports {
         xml.enabled true
-        xml.destination "${buildDir}/reports/jacoco/report.xml"
         html.enabled false
-        html.destination "${buildDir}/reports/jacoco/report.html"
         csv.enabled false
     }
 }
