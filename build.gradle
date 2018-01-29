@@ -110,9 +110,14 @@ project(':hello-world') {
                 'org.springframework.boot:spring-boot-starter',
                 'org.apiguardian:apiguardian-api:1.0.0'
 
-        testCompile 'org.springframework.boot:spring-boot-starter-test',
-                'org.junit.jupiter:junit-jupiter-api:5.0.+',
+        testCompile ('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'junit' , module: 'junit'
+        }
+        
+        testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.+',
                 'org.junit.jupiter:junit-jupiter-engine:5.0.+'
+
+        
     }
 
     mainClassName = 'com.springuers.taxy4fun.HelloWorldApp'
