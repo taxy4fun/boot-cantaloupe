@@ -9,7 +9,7 @@ buildscript {
 
 plugins {
     id "io.spring.dependency-management" version "1.0.0.RELEASE"
-    id 'org.springframework.boot' version '1.5.9.RELEASE'
+    id 'org.springframework.boot' version '1.5.10.RELEASE'
     id 'net.saliman.cobertura' version '2.5.0'
 }
 
@@ -166,4 +166,8 @@ task codeCoverageReport(type: JacocoReport) {
 
 codeCoverageReport.dependsOn {
     subprojects*.test
+}
+
+jacoco {
+    toolVersion = "0.8.0"
 }
