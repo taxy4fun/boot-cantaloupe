@@ -89,7 +89,7 @@ $ touch src/main/java/com/myproject/App.java <4>
 .build.gradle
 ----
 plugins {
-    id 'org.springframework.boot' version '1.5.8.RELEASE'
+    id 'org.springframework.boot' version '1.5.10.RELEASE'
     id 'java'
 }
 

@@ -22,7 +22,7 @@ allprojects {
     apply plugin: 'project-report'
 
     idea.module.downloadJavadoc = true
-    ext.springBootVersion = '1.5.9.RELEASE'
+    ext.springBootVersion = '1.5.10.RELEASE'
 }
 
 subprojects {
