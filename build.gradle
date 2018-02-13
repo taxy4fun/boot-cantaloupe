@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.1'
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.3'
     }
 }
 
@@ -113,11 +113,11 @@ project(':hello-world') {
         testCompile ('org.springframework.boot:spring-boot-starter-test') {
             exclude group: 'junit' , module: 'junit'
         }
-        
+
         testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.+',
                 'org.junit.jupiter:junit-jupiter-engine:5.0.+'
 
-        
+
     }
 
     mainClassName = 'com.springuers.taxy4fun.HelloWorldApp'
