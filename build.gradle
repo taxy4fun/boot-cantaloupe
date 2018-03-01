@@ -59,10 +59,10 @@ project(':controller') {
     jar.baseName = 'taxy4fun-rest-controller'
 
     dependencies {
-        compile project(':service-api')
-        compile project(':test-utils')
+        implementation project(':service-api')
+        implementation project(':test-utils')
 
-        compile libraries.vavr,
+        implementation libraries.vavr,
                 libraries.commons_lang3,
                 libraries.jackson_annotations,
                 libraries.jackson_core,
@@ -70,10 +70,10 @@ project(':controller') {
                 'org.springframework.boot:spring-boot-starter',
                 'org.springframework:spring-webmvc:4.+'
 
-        testCompile 'org.springframework.boot:spring-boot-starter-test',
+        testImplementation 'org.springframework.boot:spring-boot-starter-test',
                 libraries.mockito_core
 
-        testRuntime 'javax.servlet:javax.servlet-api:3.1.0'
+        testRuntimeOnly 'javax.servlet:javax.servlet-api:3.1.0'
     }
 }
 
@@ -83,11 +83,11 @@ project(':service-api') {
     jar.baseName = 'taxy4fun-service-api'
 
     dependencies {
-        compile 'org.springframework.boot:spring-boot-starter',
+        implementation 'org.springframework.boot:spring-boot-starter',
                 libraries.vavr,
                 libraries.commons_lang3
 
-        testCompile 'org.springframework.boot:spring-boot-starter-test',
+        testImplementation 'org.springframework.boot:spring-boot-starter-test',
                 libraries.mockito_core
     }
 }
@@ -126,12 +126,13 @@ project(':persistence') {
     jar.baseName = 'taxy4fun-persistence'
 
     dependencies {
-        compile libraries.commons_lang3,
+        implementation libraries.commons_lang3,
                 'org.springframework.boot:spring-boot-starter',
                 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-        testCompile 'org.springframework.boot:spring-boot-starter-test',
-                'com.h2database:h2:1.4.+'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+        testRuntimeOnly 'com.h2database:h2:1.4.+'
     }
 }
 
@@ -140,7 +141,7 @@ project(':test-utils') {
     jar.baseName = 'taxy4fun-test-utils'
 
     dependencies {
-        compile libraries.jackson_annotations,
+        implementation libraries.jackson_annotations,
                 libraries.jackson_core,
                 libraries.jackson_databind
     }
@@ -164,8 +165,4 @@ task codeCoverageReport(type: JacocoReport) {
 
 codeCoverageReport.dependsOn {
     subprojects*.test
-}
-
-jacoco {
-    toolVersion = "0.8.0"
 }
