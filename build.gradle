@@ -2,6 +2,12 @@ buildscript {
     repositories {
         mavenCentral()
     }
+<<<<<<< HEAD
+=======
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.1.0'
+    }
+>>>>>>> a7b0c8bf934d2151cf429080f2cb2ae150c5549c
 }
 
 plugins {
@@ -112,7 +118,12 @@ project(':hello-world') {
             exclude group: 'junit' , module: 'junit'
         }
 
+<<<<<<< HEAD
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+=======
+        testCompile 'org.junit.jupiter:junit-jupiter-api:5.1.+',
+                'org.junit.jupiter:junit-jupiter-engine:5.1.+'
+>>>>>>> a7b0c8bf934d2151cf429080f2cb2ae150c5549c
 
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
 
