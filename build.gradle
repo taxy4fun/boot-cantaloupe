@@ -7,7 +7,7 @@ buildscript {
 plugins {
     id "io.spring.dependency-management" version "1.0.0.RELEASE"
     id 'org.springframework.boot' version '1.5.10.RELEASE'
-    id 'net.saliman.cobertura' version '2.5.0'
+    id 'net.saliman.cobertura' version '2.5.4'
 }
 
 allprojects {
@@ -19,7 +19,11 @@ allprojects {
     apply plugin: 'project-report'
 
     idea.module.downloadJavadoc = true
-    ext.springBootVersion = '1.5.10.RELEASE'
+    ext {
+        springBootVersion = '1.5.10.RELEASE'
+        junit5Version = '5.1.0'
+        jacksonVersion = '2.9.+'
+    }
 }
 
 subprojects {
@@ -40,9 +44,9 @@ subprojects {
     ext.libraries = [
             vavr               : 'io.vavr:vavr:0.9.+',
             commons_lang3      : 'org.apache.commons:commons-lang3:3.+',
-            jackson_annotations: 'com.fasterxml.jackson.core:jackson-annotations:2.9.+',
-            jackson_core       : 'com.fasterxml.jackson.core:jackson-core:2.9.+',
-            jackson_databind   : 'com.fasterxml.jackson.core:jackson-databind:2.9.+',
+            jackson_annotations: "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}",
+            jackson_core       : "com.fasterxml.jackson.core:jackson-core:2.9.+${jacksonVersion}",
+            jackson_databind   : "com.fasterxml.jackson.core:jackson-databind:2.9.+${jacksonVersion}",
             mockito_core       : 'org.mockito:mockito-core:2.12.0'
     ]
 
@@ -105,16 +109,15 @@ project(':hello-world') {
 
     dependencies {
         implementation libraries.commons_lang3,
-                'org.springframework.boot:spring-boot-starter',
-                'org.apiguardian:apiguardian-api:1.0.0'
+                'org.springframework.boot:spring-boot-starter'
 
         testImplementation ('org.springframework.boot:spring-boot-starter-test') {
             exclude group: 'junit' , module: 'junit'
         }
 
-        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+        testImplementation "org.junit.jupiter:junit-jupiter-api:${junit5Version}"
 
-        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junit5Version}"
 
     }
 

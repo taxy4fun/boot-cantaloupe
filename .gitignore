@@ -18,3 +18,6 @@ target/
 
 # os x
 .DS_Store
+
+# visual code
+.vscode/
