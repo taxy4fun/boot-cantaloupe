@@ -6,7 +6,7 @@ buildscript {
 
 plugins {
     id "io.spring.dependency-management" version "1.0.0.RELEASE"
-    id 'org.springframework.boot' version '1.5.10.RELEASE'
+    id 'org.springframework.boot' version '1.5.13.RELEASE'
     id 'net.saliman.cobertura' version '2.5.4'
 }
 
@@ -20,8 +20,8 @@ allprojects {
 
     idea.module.downloadJavadoc = true
     ext {
-        springBootVersion = '1.5.10.RELEASE'
-        junit5Version = '5.1.0'
+        springBootVersion = '1.5.13.RELEASE'
+        junit5Version = '5.2.0'
         jacksonVersion = '2.9.+'
     }
 }
