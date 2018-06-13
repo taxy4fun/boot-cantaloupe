@@ -5,7 +5,7 @@ buildscript {
 }
 
 plugins {
-    id "io.spring.dependency-management" version "1.0.0.RELEASE"
+    id "io.spring.dependency-management" version "1.0.5.RELEASE"
     id 'org.springframework.boot' version '1.5.13.RELEASE'
     id 'net.saliman.cobertura' version '2.5.4'
 }
